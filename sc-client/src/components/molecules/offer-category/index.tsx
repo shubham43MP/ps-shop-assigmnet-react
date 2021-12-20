@@ -27,14 +27,7 @@ function OfferCategory({
             <Typography className="subtitle title-subtitle-base">
               {subtitle}
             </Typography>
-            <Button sx={ {
-              backgroundColor: '#FF058D',
-              color: 'white',
-              margin: 'auto',
-              display: 'block',
-              marginTop: '5px',
-              fontSize: 12
-            } }>{ `Explore ${ title.toLowerCase() }` }</Button>
+            <Button className="offer-cat-button">{ `Explore ${ title.toLowerCase() }` }</Button>
           </Grid>
           <Grid item xs={ 9 } md={ 6 } lg={ 6 }>
             <img id='offercatimage' className='productImage' src={ imageURL } alt="Offer"/>

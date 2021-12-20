@@ -9,17 +9,19 @@ type OfferCategoryType = {
     imageURL: string;
     title: string;
     subtitle: string;
+    direction?: number;
 }
 
 function OfferCategory({
   imageURL,
   title='title',
   subtitle='subtitle',
+  direction= Math.floor(Math.random() * 10) + 1
 }: OfferCategoryType) { 
   return (
     <>
       <Card className='cardContent'>
-        <Grid container spacing={ 2 }>
+        <Grid direction={ direction %2 === 0 ? 'row' : 'row-reverse' } container spacing={ 2 }>
           <Grid item xs={ 3 } md={ 6 } lg={ 6 }>
             <Typography className='title title-subtitle-base'>
               {title}

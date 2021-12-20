@@ -1,7 +1,9 @@
 import React from 'react'
 import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
+import Grid from '@mui/material/Grid'
+import './styles.scss'
+import { Button } from '@mui/material'
 
 type OfferCategoryType = {
     imageURL: string;
@@ -15,23 +17,32 @@ function OfferCategory({
   subtitle='subtitle',
 }: OfferCategoryType) { 
   return (
-    <div>
-      <Card >
-        <CardContent className='cardContent'>
-          <div className='titleSubtitleContainer'>
-            <Typography className='categoryTitle'>
+    <>
+      <Card className='cardContent'>
+        <Grid container spacing={ 2 }>
+          <Grid item xs={ 3 } md={ 6 } lg={ 6 }>
+            <Typography className='title title-subtitle-base'>
               {title}
             </Typography>
-            <Typography className="categorySubtitle">
+            <Typography className="subtitle title-subtitle-base">
               {subtitle}
             </Typography>
-          </div>
-          <img className='productImage' src={ imageURL } alt="Offer"/>
-        </CardContent>
+            <Button sx={ {
+              backgroundColor: '#FF058D',
+              color: 'white',
+              margin: 'auto',
+              display: 'block',
+              marginTop: '5px',
+              fontSize: 12
+            } }>{ `Explore ${ title.toLowerCase() }` }</Button>
+          </Grid>
+          <Grid item xs={ 9 } md={ 6 } lg={ 6 }>
+            <img id='offercatimage' className='productImage' src={ imageURL } alt="Offer"/>
+          </Grid>
+        </Grid>
       </Card>
-    </div>
+    </>
   )
 }
 
 export default OfferCategory
-//sc-client/src/static/images/category/baby.png

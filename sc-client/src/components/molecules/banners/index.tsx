@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { BannerType } from '../../../types/banners'
 import './styles.scss'
 
@@ -9,8 +9,8 @@ type BannerPropType = {
 }
 
 function Banners({ data = [] }: BannerPropType) {
-  const [ index, setIndex ] = React.useState(0)
-  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null)
+  const [ index, setIndex ] = useState(0)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   function resetTimeout() {
     if (timeoutRef.current) {
@@ -18,7 +18,7 @@ function Banners({ data = [] }: BannerPropType) {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     resetTimeout()
     timeoutRef.current = setTimeout(
       () =>

@@ -6,7 +6,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Badge from '@mui/material/Badge'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
-import { relative } from 'path/posix'
 import { buttonStyle } from './style'
 
 type HeaderPropsType = {

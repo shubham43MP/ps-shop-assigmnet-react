@@ -13,3 +13,8 @@ export const buttonBoxStyle = {
   },
   top: '50%'
 }
+
+export const appBarStyle = {
+  background: 'white',
+  height: '5%'
+}

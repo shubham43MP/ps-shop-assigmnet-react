@@ -6,7 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Badge from '@mui/material/Badge'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
-import { buttonStyle } from './style'
+import { appBarStyle, buttonStyle } from './style'
 
 type HeaderPropsType = {
   cartItems?: number
@@ -14,7 +14,7 @@ type HeaderPropsType = {
 
 function Header({ cartItems = 1 } : HeaderPropsType) {
   return (
-    <AppBar sx={ { background: 'white', height: '5%' } } position='sticky'>
+    <AppBar sx={ appBarStyle } position='sticky'>
       <Grid container sx={ { padding: '2%' } }>
         <Grid
           item

@@ -1,0 +1,1 @@
+export const SHOPPING_CATEGORIES = 'http://localhost:5000/categories'

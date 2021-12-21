@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import OfferCategory from '../../components/molecules/offer-category'
 import { CategoryType } from '../../types/category'
+import { SHOPPING_CATEGORIES } from '../../apis/urls'
 
 function Homepage() {
   const [ category, setCategory ] = useState<CategoryType[]>([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/categories')
+    fetch(SHOPPING_CATEGORIES)
       .then(response => response.json())
       .then(data => setCategory(data))
   }, [])
   
   return (
     <div>
-        HOMEPAGE
       {
         category.map((cat, index) => (
           <OfferCategory

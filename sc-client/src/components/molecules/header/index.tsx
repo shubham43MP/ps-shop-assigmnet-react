@@ -28,7 +28,14 @@ function Header({ cartItems = 1 } : HeaderPropsType) {
             id='sabka-bazar-logo-id'
           />
           <div style={ { position: 'relative' } }>
-            <Box sx={ { marginLeft: 2, position: 'absolute', display: 'flex', top: '50%' } }>
+            <Box sx={ {
+              marginLeft: 2,
+              position: 'absolute',
+              display: {
+                xs: 'none', sm: 'none', md: 'flex'
+              },
+              top: '50%' } }
+            >
               <Button sx={ buttonStyle } variant="contained">Home</Button>
               <Button sx={ { marginLeft: 1, ...buttonStyle } } variant="contained">Products</Button>
             </Box>

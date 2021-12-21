@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect, useRef } from 'react'
 import { BannerType } from '../../../types/banners'
+import { BANNER_SLIDESHOW_DELAY } from '../../../apis/constants'
 import './styles.scss'
 
 type BannerPropType = {
@@ -12,9 +13,7 @@ function Banners({ data = [] }: BannerPropType) {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   function resetTimeout() {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-    }
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
   }
 
   useEffect(() => {
@@ -24,9 +23,8 @@ function Banners({ data = [] }: BannerPropType) {
         setIndex((prevIndex) =>
           prevIndex === data.length - 1 ? 0 : prevIndex + 1
         ),
-      2000
+      BANNER_SLIDESHOW_DELAY
     )
-
     return () => {
       resetTimeout()
     }

@@ -1,0 +1,1 @@
+export const BANNER_SLIDESHOW_DELAY = 2200

@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useEffect, useRef } from 'react'
 import { BannerType } from '../../../types/banners'
 import './styles.scss'
@@ -60,6 +59,7 @@ function Banners({ data = [] }: BannerPropType) {
               key={ _.id }
               className={ `slideshowDot${ index === idx ? ' active' : '' }` }
               onClick={ () => setIndex(idx) }
+              onKeyUp={ () => setIndex(idx) }
             ></div>
           ))}
         </div>

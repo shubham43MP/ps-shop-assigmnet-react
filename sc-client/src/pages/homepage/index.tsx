@@ -4,6 +4,7 @@ import Banners from '../../components/molecules/banners'
 import { BannerType } from '../../types/banners'
 import { CategoryType } from '../../types/category'
 import { SHOPPING_CATEGORIES, SHOPPING_BANNERS } from '../../apis/urls'
+import Header from '../../components/molecules/header'
 
 function Homepage() {
   const [ category, setCategory ] = useState<CategoryType[]>([])
@@ -22,6 +23,7 @@ function Homepage() {
   
   return (
     <div>
+      <Header />
       <Banners data={ banners } />
       {
         category.map((cat, index) => (

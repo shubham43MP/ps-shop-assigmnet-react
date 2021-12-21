@@ -19,8 +19,6 @@ function Homepage() {
         .then(data => setBanners(data)),
     ])
   }, [])
-
-  console.log('ISSSSS', banners)
   
   return (
     <div>

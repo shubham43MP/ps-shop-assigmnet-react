@@ -6,7 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Badge from '@mui/material/Badge'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
-import { appBarStyle, buttonStyle } from './style'
+import { appBarStyle, buttonStyle, iconScaling } from './style'
 
 type HeaderPropsType = {
   cartItems?: number
@@ -41,10 +41,14 @@ function Header({ cartItems = 1 } : HeaderPropsType) {
             </Box>
           </div>
         </Grid>
-        <Grid item xs={ 3 } sm={ 12 } md={ 3 } lg={ 3 } xl={ 3 }>
+        <Grid
+          item
+          xs={ 3 } sm={ 12 } md={ 3 } lg={ 3 } xl={ 3 }
+          sx={ { display: 'flex', justifyContent: 'center' } }
+        >
           <div style={ { position: 'absolute', bottom: '50%' } }>
-            <Badge badgeContent={ cartItems } color="error">
-              <ShoppingCartIcon sx={ { color: '#FF058D' } } color="action"/>
+            <Badge badgeContent={ cartItems } color="error" sx ={ { transform: iconScaling } }>
+              <ShoppingCartIcon sx={ { color: '#FF058D', transform: iconScaling } } color="action"/>
             </Badge>
           </div>          
         </Grid>

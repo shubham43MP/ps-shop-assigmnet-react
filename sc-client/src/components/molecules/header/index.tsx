@@ -49,8 +49,8 @@ function Header({ cartItems = 1, children } : HeaderPropsType) {
             sx={ { display: 'flex', justifyContent: 'center' } }
           >
             <div style={ { position: 'absolute', bottom: '50%' } }>
-              <Badge badgeContent={ cartItems } color="error" sx ={ { transform: iconScaling } }>
-                <ShoppingCartIcon sx={ { color: '#FF058D', transform: iconScaling } } color="action"/>
+              <Badge badgeContent={ cartItems } color="primary" sx ={ { transform: iconScaling } }>
+                <ShoppingCartIcon sx={ { color: 'primary.main', transform: iconScaling } } color="action"/>
               </Badge>
             </div>          
           </Grid>

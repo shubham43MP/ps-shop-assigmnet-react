@@ -1,0 +1,18 @@
+$xs: 325px;
+$sm: 426px;
+$md:  768px;
+$lg: 1024px;
+$xl: 1440px;
+
+$primary-pink: #d10056;
+$secondary-blue: #51d9e2;
+
+:export {
+    primaryColor: $primary-pink;
+    secondaryColor: $secondary-blue;
+    xs: $xs;
+    sm: $sm;
+    md: $md;
+    lg: $lg;
+    xl: $xl;
+}

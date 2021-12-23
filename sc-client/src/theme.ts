@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material/styles'
 import { red } from '@mui/material/colors'
+import constants from './styles/constants.module.scss'
 
 declare module '@mui/material/styles' {
     interface BreakpointOverrides {
@@ -20,10 +21,10 @@ declare module '@mui/material/styles' {
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: constants.primaryColor,
     },
     secondary: {
-      main: '#19857b',
+      main: constants.secondaryColor,
     },
     error: {
       main: red.A400,

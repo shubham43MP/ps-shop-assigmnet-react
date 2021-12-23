@@ -1,4 +1,4 @@
-@import '../../../styles/variables.scss';
+@import '../../../styles/constants.module.scss';
 
 .offer-cat-base {
     margin-top: 25px;
@@ -32,7 +32,7 @@
 }
 
 .offer-cat-button {
-    background-color: #FF058D !important;
+    background-color: $primary-pink !important;
     color: white !important;
     margin: auto !important;
     display: block !important;

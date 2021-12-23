@@ -21,7 +21,7 @@ const Root = () => (
           <Route exact path="/contact" component={ () => RouterWrapper(lazy(() => import('pages/Contact'))) } />
           <Route exact path="/skills" component={ () => RouterWrapper(lazy(() => import('pages/Skills'))) } /> */}
         </Routes>
-      </Router>
+      </Router> 
 
     </ThemeProvider>
   </>

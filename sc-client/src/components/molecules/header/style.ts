@@ -22,7 +22,7 @@ export const appBarStyle = {
 export const iconScaling = {
   xs: 'scale(1.3)',
   sm: 'scale(1.5)',
-  lg: 'scale(1.8)',
-  md: 'scale(1.8)',
-  xl: 'scale(2)'
+  lg: 'scale(1.6)',
+  md: 'scale(1.6)',
+  xl: 'scale(1.6)'
 }

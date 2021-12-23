@@ -5,5 +5,9 @@ export const classes = {
   },
   loginMessage: {
     fontSize: { xs: '12.5px', xl: '25px', lg: '25px' },
-  }
+  },
+  emailPasswordSizes: {
+      m: 1,
+      width: '50ch'
+    }
 }

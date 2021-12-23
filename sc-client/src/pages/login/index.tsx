@@ -24,7 +24,7 @@ function Login() {
 
   const handleChange =
 	(prop: keyof LoginState) => (event: React.ChangeEvent<HTMLInputElement>) => {
-		setValues({ ...values, [ prop ]: event.target.value })
+ setValues({ ...values, [ prop ]: event.target.value })
 	}
 
   const handleClickShowPassword = () => {
@@ -41,7 +41,13 @@ function Login() {
   return (
     <div className='login-container'>
       <Grid container>
-        <Grid item xs={ 6 }>
+        <Grid
+          item
+          xs={ 12 }
+          sm={ 12 }
+          md = { 6 }
+          lg = { 6 }
+        >
           <Typography sx={ classes.loginTypo }>
 							Login
           </Typography>
@@ -49,7 +55,13 @@ function Login() {
 							Get access to your Orders, Wishlist and Recommendation
           </Typography>
         </Grid>
-        <Grid item xs={ 6 }>
+        <Grid
+          item
+          xs={ 12 }
+          sm={ 12 }
+          md = { 6 }
+          lg = { 6 }
+        >
           <TextField
             label="Email"
             id="outlined-start-adornment"

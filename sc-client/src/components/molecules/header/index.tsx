@@ -56,7 +56,7 @@ function Header({ cartItems = 1, children } : HeaderPropsType) {
           </Grid>
         </Grid>
       </AppBar>
-        {children}
+      {children}
     </>
   )
 }

@@ -5,7 +5,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import theme from './theme'
 import Homepage from './pages/homepage'
 import Login from './pages/login'
-import HeaderWrapper from './components/molecules/header-wrapper'
+import HeaderWrapper from './components/wrappers/header-wrapper'
 
 const RouterHeaderWrapper = (component: React.ElementType) => <HeaderWrapper component={ component } />
 

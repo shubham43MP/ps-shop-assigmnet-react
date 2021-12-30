@@ -2,6 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField'
 import { classes } from './style'
 import './style.scss'
+import Button from '../../components/atoms/buttons'
 
 function Register() {
   return (
@@ -36,6 +37,7 @@ function Register() {
           id="outlined-start-adornment"
           sx={ classes.emailPasswordSizes }
         />
+        <button className="btn-login"> Signup </button>
       </div>
     </div>
   )

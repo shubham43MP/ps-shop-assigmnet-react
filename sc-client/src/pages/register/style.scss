@@ -1,3 +1,5 @@
+@import '../../styles/constants.module.scss';
+
 .container {
   display: flex;
   justify-content: space-around;
@@ -26,6 +28,22 @@
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+}
+
+.btn-login {
+  margin-top: 2rem;
+  background-color: $primary-pink;
+  border-radius: 15px;
+  height: 2.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  border: 1px solid $primary-pink;
+  width: 100%;
+}
+
+.btn-login:hover {
+  background-color: $shade1;
 }
 
 @media (max-width: 425px) {

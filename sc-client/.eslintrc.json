@@ -24,12 +24,10 @@
     "multiline-comment-style": [1, "separate-lines"],
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "react/prop-types": 0,
-    "jsx-a11y/anchor-is-valid": [
-      1,
-      {
-        "aspects": ["invalidHref"]
-      }
-    ],
+    "jsx-a11y/anchor-is-valid": [ "warning", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }],
     "jsx-a11y/no-autofocus": [
       1,
       {

@@ -7,6 +7,7 @@ import Homepage from './pages/homepage';
 import Login from './pages/login';
 import Register from './pages/register';
 import NavbarWrapper from './components/wrappers/navbar-wrapper';
+import Products from './pages/products';
 import Test from './pages/test';
 
 const RouteNavbarWrapper = (Component: React.ElementType) => (<NavbarWrapper>
@@ -22,7 +23,8 @@ const Root = () => (
           <Route path='/' element={ RouteNavbarWrapper(Homepage) } />
           <Route path='/login' element={ RouteNavbarWrapper(Login) } />
           <Route path='/register' element={ RouteNavbarWrapper(Register) } />
-          <Route path='/test' element={ RouteNavbarWrapper(Test) } />
+          <Route path='/products' element={ RouteNavbarWrapper(Products) } />
+          <Route path='/products' element={ RouteNavbarWrapper(Test) } />
           {/*
           <Route exact path="/contact" component={ () => RouterWrapper(lazy(() => import('pages/Contact'))) } />
           <Route exact path="/skills" component={ () => RouterWrapper(lazy(() => import('pages/Skills'))) } /> */}

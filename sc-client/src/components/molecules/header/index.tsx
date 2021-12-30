@@ -13,7 +13,7 @@ type HeaderPropsType = {
   children?: React.ReactNode;
 };
 
-function Header({ cartItems = 1, children }: HeaderPropsType) {
+function Header({ cartItems = 1 }: HeaderPropsType) {
   return (
     <>
       <AppBar sx={ appBarStyle } position="sticky">
@@ -73,10 +73,9 @@ function Header({ cartItems = 1, children }: HeaderPropsType) {
             </div>
           </Grid>
         </Grid>
-      </AppBar>
-      <section className="children">{children}</section>
+      </AppBar> 
     </>
-  );
+  )
 }
 
-export default Header;
+export default Header

@@ -1,8 +1,3 @@
-.children {
-  width: 90%;
-  margin: 0 auto;
-}
-
 .header-container {
   padding: 10px !important;
 }
@@ -26,11 +21,4 @@
 .button-style:hover {
   background-color: #d61a67;
   color: #fff;
-}
-
-
-@media (max-width: 425px) {
-  .children {
-    width: 98%;
-  }
 }

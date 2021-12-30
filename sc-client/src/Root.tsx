@@ -5,9 +5,11 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
 import Homepage from './pages/homepage';
 import Login from './pages/login';
-import HeaderWrapper from './components/wrappers/header-wrapper';
+import NavbarWrapper from './components/wrappers/navbar-wrapper';
 
-const RouterHeaderWrapper = (component: React.ElementType) => <HeaderWrapper component={ component } />;
+const RouteNavbarWrapper = (Component: React.ElementType) => (<NavbarWrapper>
+  <Component />
+</NavbarWrapper>);
 
 const Root = () => (
   <>
@@ -15,8 +17,8 @@ const Root = () => (
       <CssBaseline />
       <Router>
         <Routes>
-          <Route path='/' element={ RouterHeaderWrapper(Homepage) } />
-          <Route path='/login' element={ RouterHeaderWrapper(Login) } />
+          <Route path='/' element={ RouteNavbarWrapper(Homepage) } />
+          <Route path='/login' element={ RouteNavbarWrapper(Login) } />
           {/*
           <Route exact path="/contact" component={ () => RouterWrapper(lazy(() => import('pages/Contact'))) } />
           <Route exact path="/skills" component={ () => RouterWrapper(lazy(() => import('pages/Skills'))) } /> */}

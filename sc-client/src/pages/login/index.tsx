@@ -24,9 +24,7 @@ function Login() {
   const [ values, setValues ] = useState<LoginState>(initialState)
 
   const handleChange =
-	(prop: keyof LoginState) => (event: React.ChangeEvent<HTMLInputElement>) => {
-	setValues({ ...values, [ prop ]: event.target.value })
-	}
+	(prop: keyof LoginState) => (event: React.ChangeEvent<HTMLInputElement>) => setValues({ ...values, [ prop ]: event.target.value })
 
   const handleClickShowPassword = () => {
     setValues({

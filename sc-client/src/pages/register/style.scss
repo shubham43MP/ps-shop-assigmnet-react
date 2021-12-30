@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 3.5rem;
+}
+
+.signup-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+}
+
+.signup-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.signup-message {
+  font-size: 1.2rem;
+}
+
+.form-control-container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 425px) {
+
+  body {
+    font-size: 50%;
+  }
+
+  .signup-text-container {
+    align-items: center;
+  }
+  .signup-message {
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .signup-text-container {
+    align-items: center;
+  }
+
+  .form-control-container{
+    margin-top: 2rem;
+  }
+}

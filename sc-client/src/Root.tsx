@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
 import Homepage from './pages/homepage';
 import Login from './pages/login';
+import Register from './pages/register';
 import NavbarWrapper from './components/wrappers/navbar-wrapper';
 
 const RouteNavbarWrapper = (Component: React.ElementType) => (<NavbarWrapper>
@@ -19,6 +20,7 @@ const Root = () => (
         <Routes>
           <Route path='/' element={ RouteNavbarWrapper(Homepage) } />
           <Route path='/login' element={ RouteNavbarWrapper(Login) } />
+          <Route path='/register' element={ RouteNavbarWrapper(Register) } />
           {/*
           <Route exact path="/contact" component={ () => RouterWrapper(lazy(() => import('pages/Contact'))) } />
           <Route exact path="/skills" component={ () => RouterWrapper(lazy(() => import('pages/Skills'))) } /> */}

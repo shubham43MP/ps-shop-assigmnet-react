@@ -1,0 +1,20 @@
+@import '../../styles/constants.module.scss';
+
+@media (max-width: $sm) {
+  .login-text-container {
+      text-align: center;
+  }
+
+  .em-pass-container {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 14px !important;
+      align-items: center !important;
+  }
+}
+
+@media (max-width: $md) {
+  .login-text-container {
+      text-align: center;
+  }
+}

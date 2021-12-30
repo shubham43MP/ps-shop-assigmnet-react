@@ -16,7 +16,8 @@ export const buttonBoxStyle = {
 
 export const appBarStyle = {
   background: 'white',
-  height: '5%'
+  height: '5%',
+  width: '100%'
 }
 
 export const iconScaling = {

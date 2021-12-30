@@ -34,7 +34,7 @@ function OfferCategory({
             </div>
           </Grid>
           <Grid item xs={ 9 } md={ 6 } lg={ 6 }>
-            <img id='offercatimage' className='productImage' src={ imageURL } alt="Offer"/>
+            <img id='Offer Categiry Image' className='productImage' src={ imageURL } alt="Offer"/>
           </Grid>
         </Grid>
       </Card>

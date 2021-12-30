@@ -12,6 +12,7 @@ import IconButton from '@mui/material/IconButton'
 import { classes } from './style'
 import { LoginState } from './login.type'
 import './styles.scss'
+import './queries.scss'
 
 const initialState =  {
   password: '',
@@ -24,7 +25,7 @@ function Login() {
 
   const handleChange =
 	(prop: keyof LoginState) => (event: React.ChangeEvent<HTMLInputElement>) => {
- setValues({ ...values, [ prop ]: event.target.value })
+	setValues({ ...values, [ prop ]: event.target.value })
 	}
 
   const handleClickShowPassword = () => {
@@ -39,8 +40,8 @@ function Login() {
   }
 
   return (
-    <div className='login-container'>
-      <Grid container>
+    <div>
+      <Grid container className="login-text-container login-container">
         <Grid
           item
           xs={ 12 }
@@ -61,6 +62,7 @@ function Login() {
           sm={ 12 }
           md = { 6 }
           lg = { 6 }
+          className='em-pass-container'
         >
           <TextField
             label="Email"
@@ -88,6 +90,7 @@ function Login() {
               }
               label="Password"
             />
+            <button className="btn-login"> Login </button>
           </FormControl>
         </Grid>
       </Grid>

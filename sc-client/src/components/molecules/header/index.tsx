@@ -36,7 +36,7 @@ function Header({ cartItems = 1 }: HeaderPropsType) {
             <div style={ { position: 'relative' } }>
               <Box
                 sx={ {
-                  marginLeft: '1.2rem',
+                  marginLeft: '4rem',
                   position: 'absolute',
                   display: {
                     xs: 'none',

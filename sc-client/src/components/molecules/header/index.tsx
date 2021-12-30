@@ -21,10 +21,6 @@ function Header({ cartItems = 1, children }: HeaderPropsType) {
           <Grid
             item
             xs={ 9 }
-            sm={ 9 }
-            md={ 9 }
-            lg={ 9 }
-            xl={ 9 }
             sx={ { display: 'flex' } }
           >
             <img
@@ -55,10 +51,6 @@ function Header({ cartItems = 1, children }: HeaderPropsType) {
           <Grid
             item
             xs={ 3 }
-            sm={ 3 }
-            md={ 3 }
-            lg={ 3 }
-            xl={ 3 }
             sx={ { display: 'flex', justifyContent: 'center' } }
           >
             <div style={ { position: 'absolute', bottom: '50%' } }>

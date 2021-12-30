@@ -1,0 +1,92 @@
+@import '../../../styles/constants.module.scss';
+
+.cart-container {
+  width: 32rem;
+  display: inline-block;
+  height: 56rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.mycart-top-header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: $shade3;
+  justify-content: space-between;
+  border-radius: 2px;
+}
+
+.my-cart-text {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  
+}
+
+.close-icon {
+  height: 1.8rem;
+  width: 1.8rem;
+  color: #fff;  
+}
+
+.cart-contents {
+  margin: auto;
+  position: relative;
+}
+
+.btn-shopping {
+  background-color: $primary-pink;
+  border-radius: 5px;
+  height: 2.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  border: 1px solid $primary-pink;
+  position: absolute;
+  bottom: 1%;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.btn-shopping:hover {
+  background-color: $shade1;
+}
+
+.empty-cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+.no-items-cart {
+
+}
+
+.no-items-cart-subheading {
+
+}
+
+.no-items-cart {
+  font-size: 2.4rem;
+}
+
+.no-items-cart-subheading {
+  font-size: 1.6rem;
+}
+
+.align-center{
+  text-align: center;
+}
+
+
+
+@media (max-width: 450px) {
+  * {
+    font-size: 50%;
+  }
+}
+

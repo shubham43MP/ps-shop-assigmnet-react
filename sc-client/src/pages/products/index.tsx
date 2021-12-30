@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { SHOPPING_PRODUCTS } from '../../apis/urls'
+import { ProductType } from '../../types/products'
 import './style.scss'
 
 function Products() {
+
+  const [ products, setproducts ] = useState<ProductType[]>([])
+
+  useEffect(() => {
+    Promise.all([
+      fetch(SHOPPING_PRODUCTS)
+        .then(response => response.json())
+        .then(data => setproducts(data))
+    ])
+  }, [])
+  
+
   return (
     <div className="products-container">
       <nav className="navigation-container">
@@ -12,7 +26,11 @@ function Products() {
         <a className="navigation-item" href="#">Baby Care</a>
       </nav>
       <section className="product-display">
-        PRODUCTS DISPLAY
+        {
+          products.map( product => {
+            return (<p key={product.id}>{product.name}</p> )
+          })
+        }
       </section>
     </div>
   )

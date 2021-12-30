@@ -1,0 +1,14 @@
+.button-style {
+  background-color: inherit;
+  color: #8a7f80;
+  font-size: 1.2rem;
+  border: none;
+  padding: 0.8rem;
+  transition: all 0.5s;
+  border-radius: 15px;
+}
+
+.button-style:hover {
+  background-color: #d61a67;
+  color: #fff;
+}

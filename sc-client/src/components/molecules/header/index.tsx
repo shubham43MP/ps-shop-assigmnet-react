@@ -7,6 +7,7 @@ import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 import { appBarStyle, iconScaling } from './style';
 import './style.scss'
+import Button from '../../atoms/buttons';
 
 type HeaderPropsType = {
   cartItems?: number;
@@ -46,8 +47,8 @@ function Header({ cartItems = 1 }: HeaderPropsType) {
                   gap: '0.8rem'
                 } }
               >
-                <button className='button-style'>Home</button>
-                <button className='button-style'>Products</button>
+                <Button label='Home' />
+                <Button label='Products' />
               </Box>
             </div>
           </Grid>

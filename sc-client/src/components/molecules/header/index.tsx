@@ -4,9 +4,8 @@ import Grid from '@mui/material/Grid';
 import AppBar from '@mui/material/AppBar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import { appBarStyle, buttonStyle, iconScaling } from './style';
+import { appBarStyle, iconScaling } from './style';
 import './style.scss'
 
 type HeaderPropsType = {
@@ -45,17 +44,11 @@ function Header({ cartItems = 1, children }: HeaderPropsType) {
                     md: 'flex',
                   },
                   top: '50%',
+                  gap: '0.8rem'
                 } }
               >
-                <Button sx={ buttonStyle } variant="contained">
-                  Home
-                </Button>
-                <Button
-                  sx={ { marginLeft: 1, ...buttonStyle } }
-                  variant="contained"
-                >
-                  Products
-                </Button>
+                <button className='button-style'>Home</button>
+                <button className='button-style'>Products</button>
               </Box>
             </div>
           </Grid>

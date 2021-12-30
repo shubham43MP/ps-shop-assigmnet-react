@@ -2,7 +2,6 @@ import React from 'react'
 import TextField from '@mui/material/TextField'
 import { classes } from './style'
 import './style.scss'
-import Button from '../../components/atoms/buttons'
 
 function Register() {
   return (

@@ -21,7 +21,7 @@ function Header({ cartItems = 1, children }: HeaderPropsType) {
           <Grid
             item
             xs={ 9 }
-            sm={ 0 }
+            sm={ 9 }
             md={ 9 }
             lg={ 9 }
             xl={ 9 }
@@ -36,12 +36,12 @@ function Header({ cartItems = 1, children }: HeaderPropsType) {
             <div style={ { position: 'relative' } }>
               <Box
                 sx={ {
-                  marginLeft: 2,
+                  marginLeft: '2px',
                   position: 'absolute',
                   display: {
                     xs: 'none',
                     sm: 'none',
-                    md: 'flex',
+                    md: 'flex'
                   },
                   top: '50%',
                   gap: '0.8rem'
@@ -55,7 +55,7 @@ function Header({ cartItems = 1, children }: HeaderPropsType) {
           <Grid
             item
             xs={ 3 }
-            sm={ 12 }
+            sm={ 3 }
             md={ 3 }
             lg={ 3 }
             xl={ 3 }

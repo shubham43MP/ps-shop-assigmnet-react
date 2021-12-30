@@ -13,8 +13,12 @@
   }
 }
 
-@media (max-width: $md) {
+@media (max-width: 900px) {
   .login-text-container {
       text-align: center;
+  }
+
+  .em-pass-container {
+    margin-top: 1.5rem !important;
   }
 }

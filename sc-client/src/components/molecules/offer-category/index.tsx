@@ -22,7 +22,13 @@ function OfferCategory({
     <>
       <Card className='offer-cat-base'>
         <Grid direction={ direction %2 === 0 ? 'row' : 'row-reverse' } container spacing={ 2 }>
-          <Grid item xs={ 3 } md={ 6 } lg={ 6 }>
+          <Grid
+            item
+            xs={ 3 }
+            md={ 6 }
+            lg={ 6 }
+            className='ts-container'
+          >
             <div className='title-subtitle-button-container'>
               <Typography className='title title-subtitle-base'>
                 {title}

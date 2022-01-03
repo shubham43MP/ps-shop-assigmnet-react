@@ -8,11 +8,6 @@ export const classes = {
   },
   emailPasswordSizes: {
     m: 1,
-    width: { xs: '35ch', sm: '35ch', md: '40ch', lg: '50ch',  xl: '50ch' }
-  },
-  emPassContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '14px'
+    width: { xs: '80%', sm: '90%', md: '50ch', lg: '50ch',  xl: '50ch' }
   }
 }

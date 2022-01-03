@@ -60,7 +60,7 @@ function Header({ cartItems = 1 }: HeaderPropsType) {
             lg={ 1 }
             sx={ { display: 'flex', justifyContent: 'center' } }
           >
-            <div style={ { position: 'absolute', bottom: '50%' } }>
+            <div className='badge-logo-container'>
               <Badge
                 badgeContent={ cartItems }
                 color="primary"

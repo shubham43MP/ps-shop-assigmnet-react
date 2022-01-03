@@ -3,12 +3,18 @@ import './style.scss';
 
 type ButtonPropType = {
   label: string;
+  handleClick?: () => void;
 }
 
-function Button({ label='' }: ButtonPropType) {
+function Button({ label='', handleClick }: ButtonPropType) {
   return (
     <>
-      <button className='button-style'>{ label }</button> 
+      <button
+        className='button-style'
+        onClick={ handleClick }
+      >
+        { label }
+      </button> 
     </>
   )
 }

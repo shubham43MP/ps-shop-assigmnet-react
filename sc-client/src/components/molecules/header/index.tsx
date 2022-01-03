@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import AppBar from '@mui/material/AppBar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -15,6 +16,20 @@ type HeaderPropsType = {
 };
 
 function Header({ cartItems = 1 }: HeaderPropsType) {
+  const history = useNavigate()
+  const location = useLocation()
+
+  const handleHomeClick = () => {
+    if(location.pathname !== '/home') {
+      history('/home')
+    }
+  }
+
+  const handleProductClick = () => {
+    if(location.pathname !== '/products') {
+      history('/products') 
+    }
+  }
   return (
     <>
       <AppBar sx={ appBarStyle } position="sticky">
@@ -47,8 +62,8 @@ function Header({ cartItems = 1 }: HeaderPropsType) {
                   gap: '0.8rem'
                 } }
               >
-                <Button label='Home' />
-                <Button label='Products' />
+                <Button handleClick={ handleHomeClick } label='Home' />
+                <Button handleClick={ handleProductClick } label='Products' />
               </Box>
             </div>
           </Grid>

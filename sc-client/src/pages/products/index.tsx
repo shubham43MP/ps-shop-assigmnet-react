@@ -27,17 +27,19 @@ function Products() {
         <a className="navigation-item" href="#">Baby Care</a>
       </nav>
       <section className="product-display">
-        {
-          products.map( product => {
-            return (<ProductCard
-                  key={product.id}
-                  heading={product.name}
-                  imageURL={product.imageURL}
-                  productDescription={product.description}
-                  price={ product.price }
-              />)
-          })
-        }
+        <div className='product-container-grid pc-grid--col-3 pc-grid--col-2 pc-grid--col-1'>
+          {
+            products.map( product => {
+              return (<ProductCard
+                    key={product.id}
+                    heading={product.name}
+                    imageURL={product.imageURL}
+                    productDescription={product.description}
+                    price={ product.price }
+                />)
+            })
+          }
+        </div>
       </section>
     </div>
   )

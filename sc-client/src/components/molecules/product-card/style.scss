@@ -7,7 +7,14 @@
   gap: .8rem;
   padding: 1rem;
   box-shadow: 10px 0 5px -2px #e0e0e0;
+  justify-self: center;
+}
 
+.pc-header {
+ font-size: 1.2rem;
+ height: 4.8rem;
+ max-height: 4.8rem;
+ overflow: hidden; 
 }
 
 .pc-article {
@@ -21,11 +28,14 @@
 }
 
 .pc-article-desc {
-  align-self: center;
   background-color: #E0E0E0;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   font-size: .9rem;
+  max-height: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 
 }
 
@@ -45,4 +55,5 @@
 
 .pc-btn:hover {
   background-color: $shade1;
+  cursor: pointer;
 }

@@ -16,6 +16,7 @@
   color: #8a7f80;
   text-decoration: none;
   padding: 1rem;
+  font-size: 1rem;
   border-bottom: 0.5px solid lightgray;
 }
 
@@ -26,4 +27,30 @@
 .product-display {
   flex-grow: 1;
   padding: 1rem;
+}
+
+.product-container-grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 2rem;
+   justify-content: space-evenly;
+}
+
+@media (max-width: 87.5em) {
+  .pc-grid--col-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 68.75em) {
+
+  .pc-grid--col-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 47em) {
+  .pc-grid--col-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

@@ -1,0 +1,48 @@
+@import '../../../styles/constants.module.scss';
+
+.pc-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 22rem;
+  gap: .8rem;
+  padding: 1rem;
+  box-shadow: 10px 0 5px -2px #e0e0e0;
+
+}
+
+.pc-article {
+  display: flex;
+}
+
+.pc-article-img {
+  padding: 1rem;
+  height: 10rem;
+  width: 10rem;
+}
+
+.pc-article-desc {
+  align-self: center;
+  background-color: #E0E0E0;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: .9rem;
+
+}
+
+.pc-btn {
+  background-color: $primary-pink;
+  border-radius: 5px;
+  height: 2.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  border: 1px solid $primary-pink;
+  bottom: 1%;
+  width: 98%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.pc-btn:hover {
+  background-color: $shade1;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { SHOPPING_PRODUCTS } from '../../apis/urls'
+import ProductCard from '../../components/molecules/product-card'
 import { ProductType } from '../../types/products'
 import './style.scss'
 
@@ -28,7 +29,13 @@ function Products() {
       <section className="product-display">
         {
           products.map( product => {
-            return (<p key={product.id}>{product.name}</p> )
+            return (<ProductCard
+                  key={product.id}
+                  heading={product.name}
+                  imageURL={product.imageURL}
+                  productDescription={product.description}
+                  price={ product.price }
+              />)
           })
         }
       </section>

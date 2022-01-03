@@ -1,7 +1,8 @@
 import { AnyAction } from 'redux'
 import { GET_PRODUCTS_SUCCESS } from 'redux/types/action.verbs'
+import { ProductReducerType } from 'redux/types/rootStateType'
 
-const initialState = {
+const initialState: ProductReducerType = {
   products: []
 }
 
@@ -14,6 +15,6 @@ export const productReducer = (state=initialState, action: AnyAction) =>{
         ...state,
         products: action.data,
       }
-    default: return state
+    default: return state 
   }
 }

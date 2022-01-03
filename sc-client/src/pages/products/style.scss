@@ -13,16 +13,24 @@
   min-width: 15%;
 }
 
-.navigation-item:link, .navigation-item:visited {
+.navigation-item {
   color: #8a7f80;
   text-decoration: none;
   padding: 1rem;
   font-size: 1rem;
-  border-bottom: 0.5px solid lightgray;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  background-color: inherit;
 }
 
-.navigation-item:active, .navigation-item:hover {
+.navigation-item:hover {
   color: $shade3;
+}
+
+.selected-button {
+  background-color: $shade2;
+  color: white;
+  transform: scale(1.05);
 }
 
 .product-display {

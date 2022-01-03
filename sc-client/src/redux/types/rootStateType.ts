@@ -18,8 +18,13 @@ export type BannerReducerType = {
   banners: BannerType[];
 }
 
+export type GlobalReducerType = {
+  productSelected: string; // Should be one of those enum values
+}
+
 export type ReducerType = {
   productReducer: ProductReducerType;
   categoryReducer: CategoryReducerType;
   bannerReducer: BannerReducerType;
+  globalReducer: GlobalReducerType;
 }

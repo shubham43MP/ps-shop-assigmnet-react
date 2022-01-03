@@ -25,9 +25,6 @@ const Root = () => (
           <Route path='/register' element={ RouteNavbarWrapper(Register) } />
           <Route path='/products' element={ RouteNavbarWrapper(Products) } />
           <Route path='/test' element={ RouteNavbarWrapper(Test) } />
-          {/*
-          <Route exact path="/contact" component={ () => RouterWrapper(lazy(() => import('pages/Contact'))) } />
-          <Route exact path="/skills" component={ () => RouterWrapper(lazy(() => import('pages/Skills'))) } /> */}
         </Routes>
       </Router>
     </ThemeProvider>

@@ -24,7 +24,7 @@
     "multiline-comment-style": [1, "separate-lines"],
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "react/prop-types": 0,
-    "jsx-a11y/anchor-is-valid": [ "warning", {
+    "jsx-a11y/anchor-is-valid": [ 0, {
       "components": [ "Link" ],
       "specialLink": [ "to" ]
     }],

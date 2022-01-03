@@ -1,22 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import { SHOPPING_PRODUCTS } from '../../apis/urls'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import ProductCard from '../../components/molecules/product-card'
-import { ProductType } from '../../types/products'
+import { selectProducts } from '../../redux/selectors/product.selector'
 import './style.scss'
+import { getProducts } from '../../redux/actions/action'
 
 function Products() {
-
-  const [ products, setproducts ] = useState<ProductType[]>([])
+  const dispatch = useDispatch()
+  const prod = useSelector(selectProducts)
 
   useEffect(() => {
-    Promise.all([
-      fetch(SHOPPING_PRODUCTS)
-        .then(response => response.json())
-        .then(data => setproducts(data))
-    ])
-  }, [])
+    dispatch(getProducts())
+  }, [ dispatch ])
   
-
   return (
     <div className="products-container">
       <nav className="navigation-container">
@@ -29,14 +25,14 @@ function Products() {
       <section className="product-display">
         <div className='product-container-grid pc-grid--col-3 pc-grid--col-2 pc-grid--col-1'>
           {
-            products.map( product => {
+            prod && prod.length > 0 && prod.map(product => {
               return (<ProductCard
-                    key={product.id}
-                    heading={product.name}
-                    imageURL={product.imageURL}
-                    productDescription={product.description}
-                    price={ product.price }
-                />)
+                key={ product.id }
+                heading={ product.name }
+                imageURL={ product.imageURL }
+                productDescription={ product.description }
+                price={ product.price }
+              />)
             })
           }
         </div>

@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux'
-import { GET_BANNER_SUCCESS } from '../types/action.verbs'
+import { GET_BANNER_SUCCESS } from 'redux/types/action.verbs'
 
 const initialState = {
   banners: []

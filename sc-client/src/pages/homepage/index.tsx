@@ -1,10 +1,10 @@
 import React from 'react'
-import OfferCategory from '../../components/molecules/offer-category'
-import Banners from '../../components/molecules/banners'
+import OfferCategory from 'components/molecules/offer-category'
+import Banners from 'components/molecules/banners'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectBanner } from '../../redux/selectors/banner.category'
-import { selectCategory } from '../../redux/selectors/category.selector'
-import { getBanner, getCategory } from '../../redux/actions/action'
+import { selectBanner } from 'redux/selectors/banner.category'
+import { selectCategory } from 'redux/selectors/category.selector'
+import { getBanner, getCategory } from 'redux/actions/action'
 
 function Homepage() {
   const dispatch = useDispatch()

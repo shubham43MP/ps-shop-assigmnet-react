@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from '../../molecules/footer';
-import Header from '../../molecules/header';
+import Footer from 'components/molecules/footer';
+import Header from 'components/molecules/header';
 import './style.scss'
 
 type NWPropsType = {

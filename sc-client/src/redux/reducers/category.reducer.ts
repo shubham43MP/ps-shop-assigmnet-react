@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux'
-import { GET_CATEGORY_SUCCESS } from '../types/action.verbs'
+import { GET_CATEGORY_SUCCESS } from 'redux/types/action.verbs'
 
 const initialState = {
   category: []

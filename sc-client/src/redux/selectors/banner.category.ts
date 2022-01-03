@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { ReducerType } from '../types/rootStateType';
+import { ReducerType } from 'redux/types/rootStateType';
 
 const selectSelf = (state: ReducerType) => state.bannerReducer
 

@@ -1,6 +1,6 @@
-import { BannerType } from '../../types/banners';
-import { CategoryType } from '../../types/category';
-import { ProductType } from '../../types/products';
+import { BannerType } from 'types/banners';
+import { CategoryType } from 'types/category';
+import { ProductType } from 'types/products';
 
 export type StateType = {
   products?: ProductType;

@@ -1,13 +1,13 @@
 import React from 'react';
-import { SABKA_BAZAR_LOGO_PATH } from '../../../apis/constants';
 import Grid from '@mui/material/Grid';
 import AppBar from '@mui/material/AppBar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
+import { SABKA_BAZAR_LOGO_PATH } from 'apis/constants';
+import Button from 'components/atoms/buttons';
 import { appBarStyle, iconScaling } from './style';
 import './style.scss'
-import Button from '../../atoms/buttons';
 
 type HeaderPropsType = {
   cartItems?: number;

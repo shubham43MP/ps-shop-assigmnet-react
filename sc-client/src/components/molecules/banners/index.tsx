@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect, useRef } from 'react'
-import { BannerType } from '../../../types/banners'
-import { BANNER_SLIDESHOW_DELAY } from '../../../apis/constants'
+import { BannerType } from 'types/banners'
+import { BANNER_SLIDESHOW_DELAY } from 'apis/constants'
 import './styles.scss'
 
 type BannerPropType = {

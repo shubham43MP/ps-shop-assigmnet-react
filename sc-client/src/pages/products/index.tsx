@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import ProductCard from '../../components/molecules/product-card'
-import { selectProducts } from '../../redux/selectors/product.selector'
+import ProductCard from 'components/molecules/product-card'
+import { selectProducts } from 'redux/selectors/product.selector'
+import { getProducts } from 'redux/actions/action'
 import './style.scss'
-import { getProducts } from '../../redux/actions/action'
 
 function Products() {
   const dispatch = useDispatch()

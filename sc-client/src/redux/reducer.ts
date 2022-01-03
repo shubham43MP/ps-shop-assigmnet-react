@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import { productReducer } from './reducers/products.reducer'
-import { bannerReducer } from './reducers/banner.reducer'
-import { categoryReducer } from './reducers/category.reducer'
+import { productReducer } from 'redux/reducers/products.reducer'
+import { bannerReducer } from 'redux/reducers/banner.reducer'
+import { categoryReducer } from 'redux/reducers/category.reducer'
 
 export default combineReducers({
   productReducer,

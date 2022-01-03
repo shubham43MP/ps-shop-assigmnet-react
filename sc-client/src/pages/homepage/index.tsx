@@ -1,30 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import OfferCategory from '../../components/molecules/offer-category'
 import Banners from '../../components/molecules/banners'
-import { BannerType } from '../../types/banners'
-import { CategoryType } from '../../types/category'
-import { SHOPPING_CATEGORIES, SHOPPING_BANNERS } from '../../apis/urls'
+import { useSelector, useDispatch } from 'react-redux'
+import { selectBanner } from '../../redux/selectors/banner.category'
+import { selectCategory } from '../../redux/selectors/category.selector'
+import { getBanner, getCategory } from '../../redux/actions/action'
 
 function Homepage() {
-  const [ category, setCategory ] = useState<CategoryType[]>([])
-  const [ banners, setBanners ] = useState<BannerType[]>([])
+  const dispatch = useDispatch()
+  const category = useSelector(selectCategory)
+  const banners = useSelector(selectBanner)
 
-  useEffect(() => {
-    Promise.all([
-      fetch(SHOPPING_CATEGORIES)
-        .then(response => response.json())
-        .then(data => setCategory(data)),
-      fetch(SHOPPING_BANNERS)
-        .then(response => response.json())
-        .then(data => setBanners(data)),
-    ])
-  }, [])
+  React.useEffect(() => {
+    dispatch(getBanner())
+    dispatch(getCategory())
+  }, [ dispatch ])
   
   return (
     <div>
       <Banners data={ banners } />
       {
-        category.map((cat, index) => (
+        category.length > 0 && category.map((cat, index) => (
           <OfferCategory
             imageURL={ cat.imageUrl }
             title={ cat.name }

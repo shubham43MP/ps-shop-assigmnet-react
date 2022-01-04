@@ -12,3 +12,8 @@ export const selectGlobalCart =  createSelector(
   selectSelf,
   state => state.cart
 )
+
+export const selectEnableBackdropAddCart = createSelector(
+  selectSelf,
+  state => state.enableBackdropAddCart
+)

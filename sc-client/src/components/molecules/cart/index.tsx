@@ -1,10 +1,9 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { ProductType } from 'types/products'
 import CartItem from 'components/atoms/cart-item'
 import { LOWEST_PRICE_PROMOTION } from 'apis/constants'
 import { CartCount } from 'redux/types/rootStateType'
-import { TCartItem } from 'types/common.types'
 import { updateCartItemCount } from 'redux/actions/action'
 import './style.scss'
 
@@ -22,7 +21,6 @@ const EmptyCart = () => {
 }
 
 function Cart({ cart = [] }: TCartProps) {
-  const [ cartDetails, setCartDetails ] = React.useState<TCartItem[]>([])
   const dispatch = useDispatch()
   const isCartEmpty = cart.length === 0
   const handleClose = () => {
@@ -35,9 +33,15 @@ function Cart({ cart = [] }: TCartProps) {
       ...filteredItems,
       count: filteredItems.count + incDecThreshold
     }
-    console.log('NON EMPTY FUNCTION')
     dispatch(updateCartItemCount({ item: filteredItems }))
   }
+
+  const totalPrice = React.useMemo(() => {
+    let price = 0;
+    cart.forEach(ci => price = price + ci.count + ci.price)
+    return price
+  }, [ cart ])
+
   return (
     <div className="cart-container">
       <div className="mycart-top-header">
@@ -91,7 +95,7 @@ function Cart({ cart = [] }: TCartProps) {
             : (
               <>
                 <p>Proceed to checkout</p>
-                <p>Rs. 187</p>
+                <p>Rs. <strong>{totalPrice}</strong></p>
               </>
             )
         }        

@@ -17,6 +17,7 @@ export type CategoryReducerType = {
 
 export type BannerReducerType = {
   banners: BannerType[];
+  loading: boolean;
 }
 
 export type GlobalReducerType = {

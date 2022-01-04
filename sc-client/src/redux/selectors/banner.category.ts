@@ -7,3 +7,8 @@ export const selectBanner =  createSelector(
   selectSelf,
   state => state.banners
 )
+
+export const selectLoading =  createSelector(
+  selectSelf,
+  state => state.loading
+)

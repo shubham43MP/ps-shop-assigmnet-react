@@ -1,8 +1,9 @@
 import { AnyAction } from 'redux'
-import { GET_BANNER_SUCCESS } from 'redux/types/action.verbs'
+import { GET_BANNER_FAILURE, GET_BANNER_SUCCESS } from 'redux/types/action.verbs'
 
 const initialState = {
-  banners: []
+  banners: [],
+  loading: true
 }
 
 export const bannerReducer = (state=initialState, action: AnyAction) =>{
@@ -13,6 +14,13 @@ export const bannerReducer = (state=initialState, action: AnyAction) =>{
       return {
         ...state,
         banners: action.data,
+        loading: false
+      }
+
+    case GET_BANNER_FAILURE : 
+      return {
+        ...state,
+        loading: false
       }
     default: return state
   }

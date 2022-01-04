@@ -10,13 +10,17 @@ type OfferCategoryType = {
     title: string;
     subtitle: string;
     direction?: number;
+    categoryId: string;
+    handleOfferClick: (item: string) => void;
 }
 
 function OfferCategory({
   imageURL,
   title='title',
   subtitle='subtitle',
-  direction=0
+  direction=0,
+  categoryId,
+  handleOfferClick
 }: OfferCategoryType) { 
   return (
     <>
@@ -36,11 +40,17 @@ function OfferCategory({
               <Typography className="subtitle title-subtitle-base">
                 {subtitle}
               </Typography>
-              <Button className="offer-cat-button">{ `Explore ${ title.toLowerCase() }` }</Button>
+              <Button
+                className="offer-cat-button"
+                onClick={ () => handleOfferClick(categoryId) }
+
+              >
+                { `Explore ${ title.toLowerCase() }` }
+              </Button>
             </div>
           </Grid>
           <Grid item xs={ 9 } md={ 6 } lg={ 6 }>
-            <img id='Offer Categiry Image' className='productImage' src={ imageURL } alt="Offer"/>
+            <img id='Offer Category Image' className='productImage' src={ imageURL } alt="Offer"/>
           </Grid>
         </Grid>
       </Card>

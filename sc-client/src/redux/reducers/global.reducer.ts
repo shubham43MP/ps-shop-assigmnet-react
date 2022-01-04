@@ -5,9 +5,11 @@ import {
   GLOBAL_ADD_TO_CART,
   GLOBAL_ADD_TO_CART_FAILURE,
   SET_NOTIFICATION,
+  UPDATE_CART_ITEM_COUNT,
 } from 'redux/types/action.verbs'
+import { GlobalReducerType } from 'redux/types/rootStateType'
 
-const initialState = {
+const initialState: GlobalReducerType = {
   productSelected: null,
   cart: [],
   enableBackdropAddCart: false,
@@ -55,6 +57,24 @@ export const globalReducer = (state=initialState, action: AnyAction) =>{
           ...action.data.notification
         }
       }
+
+    case UPDATE_CART_ITEM_COUNT: {
+      const updatedCart = state.cart.map(it => {
+        if(it.id === action.data.item.id) {
+          return {
+            ...it,
+            count: action.data.item.count
+          }
+        }
+        return it
+        
+      })
+      return {
+        ...state,
+        cart: updatedCart
+
+      }
+    }
     
     default: return state
   }

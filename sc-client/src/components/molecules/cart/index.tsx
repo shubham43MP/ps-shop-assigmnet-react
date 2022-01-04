@@ -1,9 +1,12 @@
 import React from 'react'
-import './style.scss'
+import { useSelector, useDispatch } from 'react-redux'
 import { ProductType } from 'types/products'
 import CartItem from 'components/atoms/cart-item'
 import { LOWEST_PRICE_PROMOTION } from 'apis/constants'
 import { CartCount } from 'redux/types/rootStateType'
+import { TCartItem } from 'types/common.types'
+import { updateCartItemCount } from 'redux/actions/action'
+import './style.scss'
 
 type TCartProps = {
   cart: (ProductType & CartCount)[]
@@ -18,20 +21,22 @@ const EmptyCart = () => {
   )
 }
 
-type TCartItem = {
-  id: string;
-  count: string
-}
-
 function Cart({ cart = [] }: TCartProps) {
   const [ cartDetails, setCartDetails ] = React.useState<TCartItem[]>([])
+  const dispatch = useDispatch()
   const isCartEmpty = cart.length === 0
   const handleClose = () => {
     console.log('CLOSE MY CART')
   }
 
   const handleIncDec = (incDecThreshold: number, productId: string) => {
+    let [ filteredItems ] = cart.filter(it => it.id === productId)
+    filteredItems = {
+      ...filteredItems,
+      count: filteredItems.count + incDecThreshold
+    }
     console.log('NON EMPTY FUNCTION')
+    dispatch(updateCartItemCount({ item: filteredItems }))
   }
   return (
     <div className="cart-container">
@@ -54,7 +59,7 @@ function Cart({ cart = [] }: TCartProps) {
             clipRule="evenodd" />
         </svg>
       </div>
-      <div className={ `cart-contents ${ !isCartEmpty ? 'cart-content-empty' : '' }` }>
+      <div className={ `cart-contents ${ isCartEmpty ? 'cart-content-empty' : '' }` }>
         {
           !isCartEmpty ?
             <div className='cart-item-contain'>

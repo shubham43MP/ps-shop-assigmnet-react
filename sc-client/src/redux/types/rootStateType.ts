@@ -33,7 +33,7 @@ export type BannerReducerType = {
 }
 
 export type GlobalReducerType = {
-  productSelected: string; // Should be one of those enum values
+  productSelected: string | null; // Should be one of those enum values
   cart: Array<ProductType & CartCount>;
   enableBackdropAddCart: boolean
   notification: TNotification

@@ -1,20 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import ProductCard from 'components/molecules/product-card'
 import { selectProducts } from 'redux/selectors/product.selector'
 import { getProducts, setProduct } from 'redux/actions/action'
-import './style.scss'
 import { selectGlobalProductSelected } from 'redux/selectors/global.selector'
 import { buttonContainer } from './misc'
+import './style.scss'
 
 function Products() {
   const dispatch = useDispatch()
   const prod = useSelector(selectProducts)
   const prodSelected = useSelector(selectGlobalProductSelected)
-
-  useEffect(() => {
+  
+  React.useEffect(() => {
     dispatch(getProducts())
   }, [ dispatch ])
+  
+  React.useEffect(() => window.scrollTo(0, 0), [])
 
   const handleNavClick = (id: string) => {
     dispatch(setProduct({ productSelected: id }))

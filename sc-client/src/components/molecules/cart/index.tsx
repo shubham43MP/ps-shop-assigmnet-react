@@ -38,7 +38,7 @@ function Cart({ cart = [] }: TCartProps) {
 
   const totalPrice = React.useMemo(() => {
     let price = 0;
-    cart.forEach(ci => price = price + ci.count + ci.price)
+    cart.forEach(ci => price = price + (ci.count * ci.price))
     return price
   }, [ cart ])
 

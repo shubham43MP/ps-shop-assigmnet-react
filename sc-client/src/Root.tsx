@@ -23,7 +23,7 @@ const Root = () => (
           <Route path='/home' element={ RouteNavbarWrapper(Homepage) } />
           <Route path='/login' element={ RouteNavbarWrapper(Login) } />
           <Route path='/register' element={ RouteNavbarWrapper(Register) } />
-          <Route path='/products' element={ RouteNavbarWrapper(Products) } />         
+          <Route path='/products' element={ RouteNavbarWrapper(Products) } />   
           <Route path='/test' element={ RouteNavbarWrapper(Test) } />
         </Routes>
       </Router>

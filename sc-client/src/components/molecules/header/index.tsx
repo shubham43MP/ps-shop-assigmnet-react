@@ -18,15 +18,15 @@ function Header() {
   const cart = useSelector(selectGlobalCart)
 
   const handleHomeClick = () => {
-    if(location.pathname !== '/home') {
-      history('/home')
-    }
+    if(location.pathname !== '/home') history('/home')
   }
 
   const handleProductClick = () => {
-    if(location.pathname !== '/products') {
-      history('/products') 
-    }
+    if(location.pathname !== '/products') history('/products') 
+  }
+
+  const handleCartClick = () => {
+    console.log('Cart thing')
   }
   return (
     <>
@@ -80,8 +80,9 @@ function Header() {
                 sx={ { transform: iconScaling } }
               >
                 <ShoppingCartIcon
-                  sx={ { color: 'primary.main', transform: iconScaling } }
+                  sx={ { color: 'primary.main', transform: iconScaling, cursor: 'pointer' } }
                   color="action"
+                  onClick={ handleCartClick }
                 />
               </Badge>
             </div>

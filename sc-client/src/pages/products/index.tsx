@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import CircularProgress from '@mui/material/CircularProgress';
 import ProductCard from 'components/molecules/product-card'
 import { selectProducts, selectProdLoading } from 'redux/selectors/product.selector'
 import { getProducts, setProduct, addToCart } from 'redux/actions/action'
@@ -96,10 +97,11 @@ function Products() {
                 }
               </div>
           }
-
         </section>
       </div>
-      <BackdropComponent open = { enableBackdrop }/>
+      <BackdropComponent open = { enableBackdrop }>
+        <CircularProgress color='secondary' />
+      </BackdropComponent>
       <Notification
         severity={ notification.severity }
         alertLabel={ notification.alertLabel }

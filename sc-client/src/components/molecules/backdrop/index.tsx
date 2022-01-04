@@ -4,18 +4,20 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 interface IBackropComponentProps {
   open: boolean;
+  children: React.ReactNode
 }
 
 export default function BackdropComponent({
-  open = false
+  open = false,
+  children
 }: IBackropComponentProps) {
   return (
     <>
       <Backdrop
-        sx={ { color: '#f58722', zIndex: (theme) => theme.zIndex.drawer + 1 } }
+        sx={ { zIndex: (theme) => theme.zIndex.drawer + 1 } }
         open={ open }
       >
-        <CircularProgress color="inherit" />
+        { children }
       </Backdrop>
     </>
   );

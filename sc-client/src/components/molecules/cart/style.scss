@@ -130,8 +130,13 @@
 }
 
 @media (max-width: 450px) {
-  * {
-    font-size: 50%;
+  .cart-container {
+    width: 32rem;
+    height: 53rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.8rem;
   }
 }
 

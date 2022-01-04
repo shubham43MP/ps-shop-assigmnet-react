@@ -2,19 +2,17 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import ProductCard from 'components/molecules/product-card'
 import { selectProducts, selectProdLoading } from 'redux/selectors/product.selector'
-import { getProducts, setProduct, addToCart, setNotification } from 'redux/actions/action'
+import { getProducts, setProduct, addToCart } from 'redux/actions/action'
 import {
   selectGlobalProductSelected,
   selectEnableBackdropAddCart,
-  selectGlobalCart,
-  selectNotificationState
 } from 'redux/selectors/global.selector'
 import CircularLoader from 'components/molecules/circular-loader'
 import { buttonContainer } from './misc'
 import './style.scss'
 import BackdropComponent from 'components/molecules/backdrop'
 import Notification from 'components/molecules/notification'
-import { Severity } from 'types/common.types'
+import useNotification from 'hooks/useNotification'
 
 function Products() {
   const dispatch = useDispatch()
@@ -22,9 +20,12 @@ function Products() {
   const prodSelected = useSelector(selectGlobalProductSelected)
   const loading = useSelector(selectProdLoading)
   const enableBackdrop = useSelector(selectEnableBackdropAddCart)
+  const {
+    notification,
+    handleNotificationClose
+  } = useNotification()
   
-  const cart = useSelector(selectGlobalCart)
-  const notification = useSelector(selectNotificationState)
+  // const cart = useSelector(selectGlobalCart)
   
   React.useEffect(() => {
     dispatch(getProducts())
@@ -39,24 +40,6 @@ function Products() {
   const handleProductClick = (id: string) => {
     const [ cartMember ] = prod.filter(pr => pr.id === id)
     dispatch(addToCart({ item: cartMember }))
-  }
-
-  const handleNotificationClose = () => {
-    dispatch(setNotification({
-      notification: {
-        open: false
-      }
-    }))
-  }
-
-  const handleNotificationOpen = (al: string, severity: Severity) => {
-    dispatch(setNotification({
-      notification: {
-        open: true,
-        alertLabel: al,
-        severity: severity.severity
-      }
-    }))
   }
   
   return (

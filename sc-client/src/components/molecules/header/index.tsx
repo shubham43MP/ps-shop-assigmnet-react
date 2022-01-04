@@ -11,6 +11,9 @@ import Button from 'components/atoms/buttons';
 import { selectGlobalCart } from 'redux/selectors/global.selector'
 import { appBarStyle, iconScaling } from './style';
 import './style.scss'
+import { Backdrop } from '@mui/material';
+import BackdropComponent from '../backdrop';
+import Cart from '../cart';
 
 function Header() {
   const history = useNavigate()
@@ -88,6 +91,9 @@ function Header() {
             </div>
           </Grid>
         </Grid>
+        <BackdropComponent open={ true }>
+          <Cart cart={ cart }/>
+        </BackdropComponent>
       </AppBar> 
     </>
   )

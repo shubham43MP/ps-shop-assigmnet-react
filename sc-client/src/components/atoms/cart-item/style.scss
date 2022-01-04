@@ -1,0 +1,64 @@
+@import '../../../styles/constants.module.scss';
+
+.cart-item-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  margin-top: 0.8rem;
+  border-radius: 10px;
+}
+
+.ci-img {
+  width: 8rem;
+  height: 7rem;
+  padding: .6rem;
+  justify-self: start;
+}
+
+.cart-item-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+
+}
+
+.item-quantity-picker {
+  display: flex;
+  gap: .5rem;
+
+}
+
+.item-btn {
+  background-color: $shade2;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+
+}
+
+.item-unit {
+  align-self: center;
+
+}
+
+.strong-x-element {
+  margin-right: 1rem;
+}
+
+.item-unit-price {
+  align-self: center;
+}
+
+.total-price {
+  align-self: center;
+  justify-self: flex-start;
+}
+
+.base-font-color {
+  color: $shade3
+}

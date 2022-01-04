@@ -1,10 +1,10 @@
 import React from 'react'
-import Cart from 'components/molecules/cart'
 
 function Test() {
   return (
     <div>
-      <Cart />
+      this is a test
+      {/* <Cart /> */}
     </div>
   )
 }

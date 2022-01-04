@@ -1,5 +1,6 @@
 export const BANNER_SLIDESHOW_DELAY = 2200
 export const SABKA_BAZAR_LOGO_PATH = '/static/images/logo.png'
+export const LOWEST_PRICE_PROMOTION = 'static/images/lowest-price.png'
 export enum CATEGORY_IDENTIFIER {
   fruit_veg = '5b6899953d1a866534f516e2',
   bakery_dairy = '5b6899123d1a866534f516de',

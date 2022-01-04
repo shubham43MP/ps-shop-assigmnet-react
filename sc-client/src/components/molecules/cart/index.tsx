@@ -1,5 +1,12 @@
 import React from 'react'
 import './style.scss'
+import { ProductType } from 'types/products'
+import CartItem from 'components/atoms/cart-item'
+import { LOWEST_PRICE_PROMOTION } from 'apis/constants'
+
+type TCartProps = {
+  cart: ProductType[]
+}
 
 const EmptyCart = () => {
   return (
@@ -10,11 +17,17 @@ const EmptyCart = () => {
   )
 }
 
-function Cart() {
+function Cart({ cart = [] }: TCartProps) {
+  const isCartEmpty = cart.length === 0
   return (
     <div className="cart-container">
       <div className="mycart-top-header">
-        <p className="my-cart-text">My Cart</p>
+        <p className="my-cart-text">
+          { 'My Cart' }
+          <span className='items-number'>
+            {`(${ cart.length } items)`}
+          </span>
+        </p>
         <svg xmlns="http://www.w3.org/2000/svg"
           className="close-icon"
           viewBox="0 0 20 20"
@@ -25,10 +38,31 @@ function Cart() {
             clipRule="evenodd" />
         </svg>
       </div>
-      <div className='cart-contents'>
-        <EmptyCart />
+      <div className={ `cart-contents ${ !isCartEmpty ? 'cart-content-empty' : '' }` }>
+        {
+          isCartEmpty ?
+            <div>
+              <CartItem />
+              <section className='sb-promotion'>
+                <img src={ LOWEST_PRICE_PROMOTION } className="sb-promotion-img" alt="Lowest price promotion"/>
+                <p className="sb-promotion-text">You wont find it cheaper anywhere</p>
+              </section>
+            </div>
+            :
+            <EmptyCart />
+        }
       </div>
-      <button className="btn-shopping">Start Shopping</button>
+      <button className={ `btn-shopping ${ !isCartEmpty ? 'btn-non-empty' : '' }` }>
+        {
+          isCartEmpty ? 'Start Shopping'
+            : (
+              <>
+                <p>Proceed to checkout</p>
+                <p>Rs. 187</p>
+              </>
+            )
+        }        
+      </button>
     </div>
   )
 }

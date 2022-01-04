@@ -4,7 +4,7 @@ import { ProductReducerType } from 'redux/types/rootStateType'
 
 const initialState: ProductReducerType = {
   loading: true,
-  products: []
+  products: [],
 }
 
 export const productReducer = (state=initialState, action: AnyAction) =>{

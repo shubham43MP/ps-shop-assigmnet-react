@@ -17,3 +17,8 @@ export const selectEnableBackdropAddCart = createSelector(
   selectSelf,
   state => state.enableBackdropAddCart
 )
+
+export const selectNotificationState = createSelector(
+  selectSelf,
+  state => state.notification
+)

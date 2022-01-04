@@ -4,12 +4,18 @@ import {
   GLOBAL_ADD_TO_CART_SUCCESS,
   GLOBAL_ADD_TO_CART,
   GLOBAL_ADD_TO_CART_FAILURE,
+  SET_NOTIFICATION,
 } from 'redux/types/action.verbs'
 
 const initialState = {
   productSelected: null,
   cart: [],
-  enableBackdropAddCart: false
+  enableBackdropAddCart: false,
+  notification: {
+    open: false,
+    severity: 'success',
+    alertLabel: ''
+  }
 }
 
 export const globalReducer = (state=initialState, action: AnyAction) =>{
@@ -39,6 +45,15 @@ export const globalReducer = (state=initialState, action: AnyAction) =>{
       return {
         ...state,
         enableBackdropAddCart: false
+      }
+
+    case SET_NOTIFICATION:
+      return {
+        ...state,
+        notification: {
+          ...state.notification,
+          ...action.data.notification
+        }
       }
     
     default: return state

@@ -3,8 +3,10 @@ import {
   GET_BANNER,
   GET_CATEGORY,
   SET_GLOBAL_PRODUCT,
-  GLOBAL_ADD_TO_CART
+  GLOBAL_ADD_TO_CART,
+  SET_NOTIFICATION
 } from 'redux/types/action.verbs'
+import { TNotification } from 'redux/types/rootStateType'
 import { ProductType } from 'types/products'
 
 export const getProducts = () => ({ type: GET_PRODUCTS })
@@ -13,3 +15,5 @@ export const getCategory = () => ({ type: GET_CATEGORY })
 
 export const setProduct = (data: { productSelected: string }) => ({ type: SET_GLOBAL_PRODUCT, data })
 export const addToCart = (data: { item: ProductType }) => ({ type: GLOBAL_ADD_TO_CART, data })
+
+export const setNotification = (data: { notification: Partial<TNotification> }) => ({ type: SET_NOTIFICATION, data })

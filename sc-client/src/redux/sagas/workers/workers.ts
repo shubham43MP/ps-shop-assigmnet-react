@@ -7,7 +7,8 @@ import {
   GET_BANNER_SUCCESS,
   GET_BANNER_FAILURE,
   GLOBAL_ADD_TO_CART_SUCCESS,
-  GLOBAL_ADD_TO_CART_FAILURE
+  GLOBAL_ADD_TO_CART_FAILURE,
+  SET_NOTIFICATION
 } from '../../types/action.verbs'
 import axios from 'axios'
 import {
@@ -63,7 +64,21 @@ export function* addToCartWorker(action: AnyAction) {
       data: action.data,
     })
     yield put({ type: GLOBAL_ADD_TO_CART_SUCCESS, data: action.data.item })
+    yield put({ type: SET_NOTIFICATION, data: {
+      notification: {
+        open: true,
+        severity: 'success',
+        alertLabel: 'Added to cart successfully'
+      }
+    } })
   } catch (e) {
     yield put({ type: GLOBAL_ADD_TO_CART_FAILURE })
+    yield put({ type: SET_NOTIFICATION, data: {
+      notification: {
+        open: true,
+        severity: 'error',
+        alertLabel: 'Error adding to cart'
+      }
+    } })
   }
 }

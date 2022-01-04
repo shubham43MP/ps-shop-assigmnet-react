@@ -26,7 +26,7 @@ function CartItem({
         <div className="item-quantity-picker">
           <button className="item-btn" onClick={ () => handleIncrementDecrement(-1, itemId) }>-</button>
           <p className="item-unit base-font-color">{ quantity }</p>
-          <button className="item-btn" onClick={ () => handleIncrementDecrement(-1, itemId) }>+</button>
+          <button className="item-btn" onClick={ () => handleIncrementDecrement(1, itemId) }>+</button>
           <p className="item-unit-price base-font-color">
             <strong className='strong-x-element'>X</strong>{`Rs. ${ unitPrice }`}</p>
         </div>

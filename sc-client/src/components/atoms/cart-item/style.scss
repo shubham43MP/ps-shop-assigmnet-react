@@ -40,8 +40,14 @@
   color: #fff;
   font-size: 1.5rem;
   font-weight: 800;
-
+  transition: all .8s;
 }
+
+.item-btn:hover {
+  background-color: $shade1;
+  cursor: pointer;
+}
+
 
 .item-unit {
   align-self: center;

@@ -45,6 +45,13 @@
    justify-content: space-evenly;
 }
 
+.circular-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+}
+
 @media (max-width: 87.5em) {
   .pc-grid--col-3 {
     grid-template-columns: repeat(3, 1fr);

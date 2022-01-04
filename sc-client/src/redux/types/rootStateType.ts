@@ -8,6 +8,7 @@ export type StateType = {
 
 export type ProductReducerType = {
   products: ProductType[];
+  loading: boolean;
 }
 
 export type CategoryReducerType = {

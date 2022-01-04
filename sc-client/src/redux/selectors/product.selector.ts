@@ -7,3 +7,8 @@ export const selectProducts =  createSelector(
   selectSelf,
   state => state.products
 )
+
+export const selectProdLoading =  createSelector(
+  selectSelf,
+  state => state.loading
+)

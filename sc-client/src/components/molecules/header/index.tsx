@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 import Grid from '@mui/material/Grid';
 import AppBar from '@mui/material/AppBar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -7,17 +8,14 @@ import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 import { SABKA_BAZAR_LOGO_PATH } from 'apis/constants';
 import Button from 'components/atoms/buttons';
+import { selectGlobalCart } from 'redux/selectors/global.selector'
 import { appBarStyle, iconScaling } from './style';
 import './style.scss'
 
-type HeaderPropsType = {
-  cartItems?: number;
-  children?: React.ReactNode;
-};
-
-function Header({ cartItems = 1 }: HeaderPropsType) {
+function Header() {
   const history = useNavigate()
   const location = useLocation()
+  const cart = useSelector(selectGlobalCart)
 
   const handleHomeClick = () => {
     if(location.pathname !== '/home') {
@@ -77,7 +75,7 @@ function Header({ cartItems = 1 }: HeaderPropsType) {
           >
             <div className='badge-logo-container'>
               <Badge
-                badgeContent={ cartItems }
+                badgeContent={ cart.length || 0 }
                 color="primary"
                 sx={ { transform: iconScaling } }
               >

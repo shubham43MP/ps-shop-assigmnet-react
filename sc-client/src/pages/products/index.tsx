@@ -2,8 +2,8 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import ProductCard from 'components/molecules/product-card'
 import { selectProducts } from 'redux/selectors/product.selector'
-import { getProducts, setProduct } from 'redux/actions/action'
-import { selectGlobalProductSelected } from 'redux/selectors/global.selector'
+import { getProducts, setProduct, addToCart } from 'redux/actions/action'
+import { selectGlobalProductSelected, selectGlobalCart } from 'redux/selectors/global.selector'
 import { buttonContainer } from './misc'
 import './style.scss'
 
@@ -11,6 +11,7 @@ function Products() {
   const dispatch = useDispatch()
   const prod = useSelector(selectProducts)
   const prodSelected = useSelector(selectGlobalProductSelected)
+  // const cart = useSelector(selectGlobalCart)
   
   React.useEffect(() => {
     dispatch(getProducts())
@@ -20,6 +21,11 @@ function Products() {
 
   const handleNavClick = (id: string) => {
     dispatch(setProduct({ productSelected: id }))
+  }
+
+  const handleProductClick = (id: string) => {
+    const [ cartMember ] = prod.filter(pr => pr.id === id)
+    dispatch(addToCart({ item: cartMember }))
   }
   
   return (
@@ -49,6 +55,8 @@ function Products() {
                   imageURL={ product.imageURL }
                   productDescription={ product.description }
                   price={ product.price }
+                  productId={ product.id }
+                  handleProductClick={ handleProductClick }
                 />)
 
               } else {
@@ -59,10 +67,11 @@ function Products() {
                     imageURL={ product.imageURL }
                     productDescription={ product.description }
                     price={ product.price }
+                    productId={ product.id }
+                    handleProductClick={ handleProductClick }
                   />)
                 }
               }
-
             })
           }
         </div>

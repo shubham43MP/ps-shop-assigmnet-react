@@ -20,6 +20,7 @@ export type BannerReducerType = {
 
 export type GlobalReducerType = {
   productSelected: string; // Should be one of those enum values
+  cart: ProductType[]
 }
 
 export type ReducerType = {

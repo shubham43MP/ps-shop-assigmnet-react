@@ -1,8 +1,12 @@
 import { AnyAction } from 'redux'
-import { SET_GLOBAL_PRODUCT } from 'redux/types/action.verbs'
+import {
+  SET_GLOBAL_PRODUCT,
+  GLOBAL_ADD_TO_CART
+} from 'redux/types/action.verbs'
 
 const initialState = {
-  productSelected: null
+  productSelected: null,
+  cart: []
 }
 
 export const globalReducer = (state=initialState, action: AnyAction) =>{
@@ -13,6 +17,12 @@ export const globalReducer = (state=initialState, action: AnyAction) =>{
       return {
         ...state,
         productSelected: action.data.productSelected,
+      }
+
+    case GLOBAL_ADD_TO_CART:
+      return {
+        ...state,
+        cart: [ ...state.cart, action.data.item ]
       }
     default: return state
   }

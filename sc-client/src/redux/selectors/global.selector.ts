@@ -7,3 +7,8 @@ export const selectGlobalProductSelected =  createSelector(
   selectSelf,
   state => state.productSelected
 )
+
+export const selectGlobalCart =  createSelector(
+  selectSelf,
+  state => state.cart
+)

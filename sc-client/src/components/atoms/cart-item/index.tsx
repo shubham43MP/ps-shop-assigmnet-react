@@ -6,13 +6,17 @@ type TCartItem = {
   imageURL?: string;
   quantity?: number;
   unitPrice?: number;
+  handleIncrementDecrement: (threshold: number, itemId: string) =>  void;
+  itemId: string;
 }
 
 function CartItem({
   heading= 'Apple - Washington, Regular 4pcs',
   imageURL = '/static/images/products/fruit-n-veg/apple.jpg',
   quantity = 2,
-  unitPrice = 187
+  unitPrice = 187,
+  handleIncrementDecrement,
+  itemId,
 }: TCartItem) {
   return (
     <div className='cart-item-container'>
@@ -20,9 +24,9 @@ function CartItem({
       <div className="cart-item-detail">
         <h4 className='base-font-color'>{ heading }</h4>
         <div className="item-quantity-picker">
-          <button className="item-btn">-</button>
+          <button className="item-btn" onClick={ () => handleIncrementDecrement(-1, itemId) }>-</button>
           <p className="item-unit base-font-color">{ quantity }</p>
-          <button className="item-btn">+</button>
+          <button className="item-btn" onClick={ () => handleIncrementDecrement(-1, itemId) }>+</button>
           <p className="item-unit-price base-font-color">
             <strong className='strong-x-element'>X</strong>{`Rs. ${ unitPrice }`}</p>
         </div>

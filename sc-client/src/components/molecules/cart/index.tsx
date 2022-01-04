@@ -17,8 +17,21 @@ const EmptyCart = () => {
   )
 }
 
+type TCartItem = {
+  id: string;
+  count: string
+}
+
 function Cart({ cart = [] }: TCartProps) {
+  const [ cartDetails, setCartDetails ] = React.useState<TCartItem[]>([])
   const isCartEmpty = cart.length === 0
+  const handleClose = () => {
+    console.log('CLOSE MY CART')
+  }
+
+  const handleIncDec = (incDecThreshold: number, productId: string) => {
+    console.log('NON EMPTY FUNCTION')
+  }
   return (
     <div className="cart-container">
       <div className="mycart-top-header">
@@ -31,7 +44,9 @@ function Cart({ cart = [] }: TCartProps) {
         <svg xmlns="http://www.w3.org/2000/svg"
           className="close-icon"
           viewBox="0 0 20 20"
-          fill="currentColor">
+          fill="currentColor"
+          onClick={ handleClose }
+        >
           <path
             fillRule="evenodd"
             d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -42,7 +57,10 @@ function Cart({ cart = [] }: TCartProps) {
         {
           isCartEmpty ?
             <div>
-              <CartItem />
+              <CartItem
+                handleIncrementDecrement={ handleIncDec }
+                itemId={'someId'}
+              />
               <section className='sb-promotion'>
                 <img src={ LOWEST_PRICE_PROMOTION } className="sb-promotion-img" alt="Lowest price promotion"/>
                 <p className="sb-promotion-text">You wont find it cheaper anywhere</p>

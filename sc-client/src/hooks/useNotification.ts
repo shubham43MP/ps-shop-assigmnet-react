@@ -18,12 +18,12 @@ const useNotification = () => {
     }))
   }
 
-  const handleNotificationOpen = (al: string, severity: Severity) => {
+  const handleNotificationOpen = ({ al, severity }:  { al: string } & Severity) => {
     dispatch(setNotification({
       notification: {
         open: true,
         alertLabel: al,
-        severity: severity.severity
+        severity
       }
     }))
   }

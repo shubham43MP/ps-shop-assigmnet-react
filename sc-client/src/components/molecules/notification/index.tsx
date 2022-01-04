@@ -27,7 +27,7 @@ const Notification = ({
     <>
       <Stack spacing={ 2 } sx={ { width: '100%' } }>
         <Snackbar open={ open } autoHideDuration={ 3000 } onClose={ handleClose }>
-          <Alert onClose={ handleClose } severity={ severity } sx={ { width: '100%' } }>
+          <Alert onClose={ handleClose } severity={ severity } sx={ { width: '100%', fontSize: '1.1rem' } }>
             {alertLabel}
           </Alert>
         </Snackbar>

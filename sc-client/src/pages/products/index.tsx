@@ -7,6 +7,7 @@ import { getProducts, setProduct, addToCart } from 'redux/actions/action'
 import {
   selectGlobalProductSelected,
   selectEnableBackdropAddCart,
+  selectGlobalCart,
 } from 'redux/selectors/global.selector'
 import CircularLoader from 'components/molecules/circular-loader'
 import { buttonContainer } from './misc'
@@ -23,10 +24,11 @@ function Products() {
   const enableBackdrop = useSelector(selectEnableBackdropAddCart)
   const {
     notification,
-    handleNotificationClose
+    handleNotificationClose,
+    handleNotificationOpen
   } = useNotification()
   
-  // const cart = useSelector(selectGlobalCart)
+  const cart = useSelector(selectGlobalCart)
   
   React.useEffect(() => {
     dispatch(getProducts())
@@ -39,6 +41,10 @@ function Products() {
   }
   
   const handleProductClick = (id: string) => {
+    if(cart.find(item => item.id === id)) {
+      handleNotificationOpen({ al: 'Item already exists in cart', severity: 'error' })
+      return
+    }
     const [ cartMember ] = prod.filter(pr => pr.id === id)
     dispatch(addToCart({ item: cartMember }))
   }

@@ -8,6 +8,10 @@ export type NotificationOpen = {
     alertLabel: string;
 }
 
+export type CartCount = {
+  count: number;
+}
+
 export type TNotification = NotificationOpen & Severity
 
 export type StateType = {
@@ -30,7 +34,7 @@ export type BannerReducerType = {
 
 export type GlobalReducerType = {
   productSelected: string; // Should be one of those enum values
-  cart: ProductType[];
+  cart: Array<ProductType & CartCount>;
   enableBackdropAddCart: boolean
   notification: TNotification
 }

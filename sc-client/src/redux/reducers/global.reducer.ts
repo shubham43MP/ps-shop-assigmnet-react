@@ -37,7 +37,7 @@ export const globalReducer = (state=initialState, action: AnyAction) =>{
     case GLOBAL_ADD_TO_CART_SUCCESS:
       return {
         ...state,
-        cart: [ ...state.cart, action.data ],
+        cart: [ ...state.cart, { ...action.data, count: 1 } ],
         enableBackdropAddCart: false
       }
 

@@ -20,7 +20,9 @@
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
-
+  flex-grow: 1;
+  padding-right: 5px;
+  max-width: 95%;
 }
 
 .item-quantity-picker {
@@ -57,6 +59,7 @@
 .total-price {
   align-self: center;
   justify-self: flex-start;
+  margin-right: 1rem;
 }
 
 .base-font-color {

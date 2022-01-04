@@ -3,9 +3,10 @@ import './style.scss'
 import { ProductType } from 'types/products'
 import CartItem from 'components/atoms/cart-item'
 import { LOWEST_PRICE_PROMOTION } from 'apis/constants'
+import { CartCount } from 'redux/types/rootStateType'
 
 type TCartProps = {
-  cart: ProductType[]
+  cart: (ProductType & CartCount)[]
 }
 
 const EmptyCart = () => {
@@ -55,12 +56,21 @@ function Cart({ cart = [] }: TCartProps) {
       </div>
       <div className={ `cart-contents ${ !isCartEmpty ? 'cart-content-empty' : '' }` }>
         {
-          isCartEmpty ?
-            <div>
-              <CartItem
-                handleIncrementDecrement={ handleIncDec }
-                itemId={'someId'}
-              />
+          !isCartEmpty ?
+            <div className='cart-item-contain'>
+              {
+                cart.map(item => (
+                  <CartItem
+                    key={ item.id }
+                    handleIncrementDecrement={ handleIncDec }
+                    itemId={ item.id }
+                    heading= { item.name }
+                    imageURL = { item.imageURL }
+                    quantity = { item.count }
+                    unitPrice = { item.price }                  
+                  />
+                ))
+              }
               <section className='sb-promotion'>
                 <img src={ LOWEST_PRICE_PROMOTION } className="sb-promotion-img" alt="Lowest price promotion"/>
                 <p className="sb-promotion-text">You wont find it cheaper anywhere</p>

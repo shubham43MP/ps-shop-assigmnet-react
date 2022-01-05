@@ -51,7 +51,6 @@
 
 .item-unit {
   align-self: center;
-
 }
 
 .strong-x-element {
@@ -66,8 +65,38 @@
   align-self: center;
   justify-self: flex-start;
   margin-right: 1rem;
+  display: flex;
 }
 
 .base-font-color {
   color: $shade3
+}
+
+@media (max-width: 47em) {
+  .ci-img {
+    padding-left: 0;
+  }
+
+  .item-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+  }
+
+  .item-unit {
+    font-size: .8rem;
+  }
+
+  .item-unit-price {
+    font-size: .8rem;
+  }
+
+  .total-price {
+    font-size: .8rem;
+    margin-right: 3px;
+  }
+
+  .heading-product {
+    font-size: .9rem;
+  }
 }

@@ -22,7 +22,7 @@ function CartItem({
     <div className='cart-item-container'>
       <img src={ imageURL } alt="Product" className='ci-img' />
       <div className="cart-item-detail">
-        <h4 className='base-font-color'>{ heading }</h4>
+        <h4 className='base-font-color heading-product'>{ heading }</h4>
         <div className="item-quantity-picker">
           <button className="item-btn" onClick={ () => handleIncrementDecrement(-1, itemId) }>-</button>
           <p className="item-unit base-font-color">{ quantity }</p>

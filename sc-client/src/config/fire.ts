@@ -1,5 +1,5 @@
 import { FirebaseApp, initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, User, signInWithEmailAndPassword } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, User, signInWithEmailAndPassword } from 'firebase/auth'
 import React from 'react'
 
 const firebaseConfig = {
@@ -29,7 +29,7 @@ export function useAuth() {
   const [ currentUser, setCurrentUser ] = React.useState<User | null>()
 
   React.useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (user) =>  setCurrentUser(user) )
+    const unsub = onAuthStateChanged(auth, (user) =>  setCurrentUser(user))
     return unsub;
   }, [])
   return currentUser

@@ -50,9 +50,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      console.log('VALUESŚ, ', values.email, values.password)
       const user  = await login(values.email, values.password)
-      console.log('user, ', user)
       sessionStorage.setItem('access-token', user.user.refreshToken)
       navigate('/home')
     } catch(e) {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
@@ -9,10 +9,28 @@ import NavbarWrapper from 'components/wrappers/navbar-wrapper';
 import Products from 'pages/products';
 import Test from 'pages/test';
 import theme from './theme';
+import LogggedinWrapper from 'components/wrappers/login-wrapper';
+import NonLoginWrapper from 'components/wrappers/non-login-wrapper';
 
 const RouteNavbarWrapper = (Component: React.ElementType) => (<NavbarWrapper>
   <Component />
 </NavbarWrapper>);
+
+const LoginWrapper = (Component: React.ElementType) => (
+  <LogggedinWrapper>
+    {
+      RouteNavbarWrapper(Component)
+    }
+  </LogggedinWrapper>
+)
+
+const NonLoginPages = (Component: React.ElementType) => (
+  <NonLoginWrapper>
+    {
+      RouteNavbarWrapper(Component)
+    }
+  </NonLoginWrapper>
+)
 
 const Root = () => (
   <>
@@ -20,11 +38,11 @@ const Root = () => (
       <CssBaseline />
       <Router>
         <Routes>
-          <Route path='/home' element={ RouteNavbarWrapper(Homepage) } />
-          <Route path='/login' element={ RouteNavbarWrapper(Login) } />
-          <Route path='/register' element={ RouteNavbarWrapper(Register) } />
-          <Route path='/products' element={ RouteNavbarWrapper(Products) } />   
-          <Route path='/test' element={ RouteNavbarWrapper(Test) } />
+          <Route path='/home' element={ LoginWrapper(Homepage) } />
+          <Route path='/login' element={ NonLoginPages(Login) } />
+          <Route path='/register' element={ NonLoginPages(Register) } />
+          <Route path='/products' element={ LoginWrapper(Products) } />   
+          <Route path='/test' element={ LoginWrapper(Test) } />
         </Routes>
       </Router>
     </ThemeProvider>

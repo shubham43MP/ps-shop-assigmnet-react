@@ -1,3 +1,4 @@
+import { UserCredential } from 'firebase/auth'
 import {
   GET_PRODUCTS,
   GET_BANNER,
@@ -7,7 +8,9 @@ import {
   SET_NOTIFICATION,
   UPDATE_CART_ITEM_COUNT,
   REMOVE_CART_ITEM,
-  EMPTY_CART
+  EMPTY_CART,
+  ADD_USER,
+  REMOVE_USER_ON_SIGNOUT
 } from 'redux/types/action.verbs'
 import { CartCount, TNotification } from 'redux/types/rootStateType'
 import { ProductType } from 'types/products'
@@ -26,3 +29,7 @@ export const updateCartItemCount = (data: { item: ProductType & CartCount }) => 
 export const removeCartItem = (data: { itemId: string }) => ({ type: REMOVE_CART_ITEM, data })
 
 export const emptyCart = () => ({ type: EMPTY_CART })
+
+export const addUser = (data:{ user: UserCredential }) => ({ type: ADD_USER, data })
+
+export const removeUserOnSignout = () => ({ type: REMOVE_USER_ON_SIGNOUT }) 

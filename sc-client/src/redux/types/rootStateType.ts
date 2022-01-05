@@ -1,3 +1,4 @@
+import { User, UserCredential } from 'firebase/auth';
 import { BannerType } from 'types/banners';
 import { CategoryType } from 'types/category';
 import { Severity } from 'types/common.types';
@@ -35,8 +36,9 @@ export type BannerReducerType = {
 export type GlobalReducerType = {
   productSelected: string | null; // Should be one of those enum values
   cart: Array<ProductType & CartCount>;
-  enableBackdropAddCart: boolean
-  notification: TNotification
+  enableBackdropAddCart: boolean;
+  notification: TNotification;
+  user: UserCredential | null
 }
 
 export type ReducerType = {

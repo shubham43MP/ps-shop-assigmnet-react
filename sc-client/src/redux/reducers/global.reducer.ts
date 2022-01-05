@@ -8,6 +8,8 @@ import {
   UPDATE_CART_ITEM_COUNT,
   REMOVE_CART_ITEM,
   EMPTY_CART,
+  ADD_USER,
+  REMOVE_USER_ON_SIGNOUT
 } from 'redux/types/action.verbs'
 import { GlobalReducerType } from 'redux/types/rootStateType'
 
@@ -19,7 +21,8 @@ const initialState: GlobalReducerType = {
     open: false,
     severity: 'success',
     alertLabel: ''
-  }
+  },
+  user: null
 }
 
 export const globalReducer = (state=initialState, action: AnyAction) =>{
@@ -90,6 +93,20 @@ export const globalReducer = (state=initialState, action: AnyAction) =>{
       return {
         ...state,
         cart: []
+      }
+    }
+
+    case ADD_USER :{
+      return {
+        ...state,
+        user: action.data.user
+      }
+    }
+
+    case REMOVE_USER_ON_SIGNOUT :{
+      return {
+        ...state,
+        user: null
       }
     }
     

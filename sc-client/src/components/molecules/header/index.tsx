@@ -50,9 +50,9 @@ function Header() {
         <Grid container sx={ { padding: '1%' } }>
           <Grid
             item
-            xs={ 10 }
+            xs={ 9 }
             sm={ 11 }
-            md={ 11 }
+            md={ 10 }
             lg={ 11 }
             sx={ { display: 'flex' } }
           >
@@ -83,9 +83,9 @@ function Header() {
           </Grid>
           <Grid
             item
-            xs={ 2 }
+            xs={ 3 }
             sm={ 1 }
-            md={ 1 }
+            md={ 2 }
             lg={ 1 }
             sx={ { display: 'flex', justifyContent: 'center' } }
           >

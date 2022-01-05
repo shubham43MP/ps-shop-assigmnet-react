@@ -25,9 +25,16 @@
   color: $shade1;
   display: inline;
   height: fit-content;
+  // font-size: 0.8rem;
 }
 
 .signin-links:hover, .signin-links:active {
   text-decoration: underline;
+}
+
+@media(max-width: 56.25em) {
+  .signin-links:link, .signin-links:visited  {
+    font-size: 0.8rem;
+  }
 }
 

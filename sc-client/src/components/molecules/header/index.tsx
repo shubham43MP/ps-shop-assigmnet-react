@@ -11,7 +11,6 @@ import Button from 'components/atoms/buttons';
 import { selectGlobalCart } from 'redux/selectors/global.selector'
 import { appBarStyle, iconScaling } from './style';
 import './style.scss'
-import { Backdrop } from '@mui/material';
 import BackdropComponent from '../backdrop';
 import Cart from '../cart';
 
@@ -19,6 +18,7 @@ function Header() {
   const history = useNavigate()
   const location = useLocation()
   const cart = useSelector(selectGlobalCart)
+  const [ backdropEnable, setbackdropEnable ] = React.useState<boolean>(false)
 
   const handleHomeClick = () => {
     if(location.pathname !== '/home') history('/home')
@@ -29,7 +29,7 @@ function Header() {
   }
 
   const handleCartClick = () => {
-    console.log('Cart thing')
+    setbackdropEnable(true)
   }
   return (
     <>
@@ -91,7 +91,7 @@ function Header() {
             </div>
           </Grid>
         </Grid>
-        <BackdropComponent open={ true }>
+        <BackdropComponent open={ backdropEnable }>
           <Cart cart={ cart }/>
         </BackdropComponent>
       </AppBar> 

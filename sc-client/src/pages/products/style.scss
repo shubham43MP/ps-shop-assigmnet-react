@@ -66,6 +66,25 @@
 }
 
 @media (max-width: 47em) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .navigation-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #E0E0E0;
+    border-radius: 3px;
+    flex-shrink: 2;
+    height: fit-content;
+    min-height: fit-content;
+  }
+
+  .product-display {
+    padding: 0.8rem;
+  }
+
   .pc-grid--col-1 {
     grid-template-columns: repeat(1, 1fr);
   }

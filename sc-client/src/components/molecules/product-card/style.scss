@@ -57,3 +57,19 @@
   background-color: $shade1;
   cursor: pointer;
 }
+
+@media (max-width: 47em) {
+  .pc-container {
+    padding: 0rem;
+  }
+
+  .pc-btn {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  .pc-article {
+    padding: 0.5rem
+  }
+}

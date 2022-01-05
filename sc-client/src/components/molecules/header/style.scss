@@ -1,3 +1,5 @@
+@import '../../../styles/constants.module.scss';
+
 .header-container {
   padding: 10px !important;
 }
@@ -10,5 +12,22 @@
 
 .badge-logo-container {
   position: absolute;
-  bottom: 50%;
+  bottom: 30%;
 }
+
+.signin-signout-register {
+  display: flex;
+  gap: .8rem
+}
+
+.signin-links:link, .signin-links:visited  {
+  text-decoration: none;
+  color: $shade1;
+  display: inline;
+  height: fit-content;
+}
+
+.signin-links:hover, .signin-links:active {
+  text-decoration: underline;
+}
+

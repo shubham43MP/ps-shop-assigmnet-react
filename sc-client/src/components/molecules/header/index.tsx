@@ -38,7 +38,7 @@ function Header() {
   return (
     <>
       <AppBar sx={ appBarStyle } position="sticky">
-        <Grid container sx={ { padding: '2%' } }>
+        <Grid container sx={ { padding: '1%' } }>
           <Grid
             item
             xs={ 10 }
@@ -78,8 +78,13 @@ function Header() {
             sm={ 1 }
             md={ 1 }
             lg={ 1 }
-            sx={ { display: 'flex', justifyContent: 'center' } }
+            sx={ { display: 'flex', justifyContent: 'center'} }
           >
+            <div className="signin-signout-register">
+              <a className='signin-links' href='/login'>Login</a>
+              <a className='signin-links' href='/logout'>Logout</a>
+              <a className='signin-links' href='/register'>Register</a>
+            </div>
             <div className='badge-logo-container'>
               <Badge
                 badgeContent={ cart.length || 0 }

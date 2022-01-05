@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import './style.scss'
 
 function HomeProduct() {
-  const navigate = useNavigate()
+  const navigate = useNavigate() 
   return (
     <div className='home-product-container'>
       <svg

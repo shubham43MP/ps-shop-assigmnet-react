@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "fix": "cd sc-client && yarn lint:fix && cd .."
+    "fix": "cd sc-client && yarn lint:fix && cd ..",
+    "start:client": "cd sc-client && yarn start"
   },
   "author": "",
   "license": "MIT",

@@ -14,6 +14,7 @@ import Cart from 'components/molecules/cart';
 import { userLogout } from 'redux/actions/action';
 import { appBarStyle, iconScaling } from './style';
 import './style.scss'
+import HomeProduct from '../home-product';
 
 function Header() {
   const history = useNavigate()
@@ -62,7 +63,9 @@ function Header() {
               className="sabka-bazar-logo"
               id="sabka-bazar-logo-id"
             />
-            <div style={ { position: 'relative' } }>
+            <div
+              style={ { position: 'relative' } }
+            >
               <Box
                 sx={ {
                   marginLeft: '4rem',
@@ -79,6 +82,9 @@ function Header() {
                 <Button handleClick={ handleHomeClick } label='Home' />
                 <Button handleClick={ handleProductClick } label='Products' />
               </Box>
+              <div className='home-product-mobile-icons'>
+                <HomeProduct />
+              </div>
             </div>
           </Grid>
           <Grid

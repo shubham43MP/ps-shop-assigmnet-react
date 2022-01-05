@@ -95,7 +95,7 @@ function Header() {
             </div>
           </Grid>
         </Grid>
-        <BackdropComponent open={ backdropEnable }>
+        <BackdropComponent open={ backdropEnable } handleClose={ handleCartClose }>
           <Cart cart={ cart } handleCartClose={ handleCartClose }/>
         </BackdropComponent>
       </AppBar> 

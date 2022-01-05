@@ -9,7 +9,7 @@ import './style.scss'
 
 type TCartProps = {
   cart: (ProductType & CartCount)[];
-  handleCartClose: () => void;
+  handleClose: () => void;
 }
 
 const EmptyCart = () => {
@@ -21,7 +21,7 @@ const EmptyCart = () => {
   )
 }
 
-function Cart({ cart = [], handleCartClose }: TCartProps) {
+function Cart({ cart = [], handleClose }: TCartProps) {
   const dispatch = useDispatch()
   const isCartEmpty = cart.length === 0
   const handleIncDec = (incDecThreshold: number, productId: string) => {
@@ -52,7 +52,7 @@ function Cart({ cart = [], handleCartClose }: TCartProps) {
           className="close-icon"
           viewBox="0 0 20 20"
           fill="currentColor"
-          onClick={ handleCartClose }
+          onClick={ handleClose }
         >
           <path
             fillRule="evenodd"

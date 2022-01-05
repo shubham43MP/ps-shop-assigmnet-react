@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 import Grid from '@mui/material/Grid';
 import AppBar from '@mui/material/AppBar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -8,16 +8,19 @@ import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 import { SABKA_BAZAR_LOGO_PATH } from 'apis/constants';
 import Button from 'components/atoms/buttons';
-import { selectGlobalCart } from 'redux/selectors/global.selector'
+import { selectGlobalCart, selectIsLogin } from 'redux/selectors/global.selector'
+import BackdropComponent from 'components/molecules/backdrop';
+import Cart from 'components/molecules/cart';
+import { userLogout } from 'redux/actions/action';
 import { appBarStyle, iconScaling } from './style';
 import './style.scss'
-import BackdropComponent from '../backdrop';
-import Cart from '../cart';
 
 function Header() {
   const history = useNavigate()
   const location = useLocation()
-  const cart = useSelector(selectGlobalCart)
+  const cart = useSelector(selectGlobalCart, shallowEqual)
+  const isLoggedIn = useSelector(selectIsLogin, shallowEqual)
+  const dispatch = useDispatch()
   const [ backdropEnable, setbackdropEnable ] = React.useState<boolean>(false)
 
   const handleHomeClick = () => {
@@ -34,6 +37,12 @@ function Header() {
 
   const handleCartClose = () => {
     setbackdropEnable(false)
+  }
+
+  const handleLogout = () => {
+    dispatch(userLogout())
+    sessionStorage.removeItem('access-token')
+    history('/login')
   }
   return (
     <>
@@ -78,12 +87,20 @@ function Header() {
             sm={ 1 }
             md={ 1 }
             lg={ 1 }
-            sx={ { display: 'flex', justifyContent: 'center'} }
+            sx={ { display: 'flex', justifyContent: 'center' } }
           >
             <div className="signin-signout-register">
-              <a className='signin-links' href='/login'>Login</a>
-              <a className='signin-links' href='/logout'>Logout</a>
-              <a className='signin-links' href='/register'>Register</a>
+              {
+                isLoggedIn ?
+                  <>
+                    <a className='signin-links' href="#" onClick={ handleLogout } >Logout</a>
+                  </>
+                  : 
+                  <>
+                    <a className='signin-links' href='/login'>Login</a>
+                    <a className='signin-links' href='/register'>Register</a>
+                  </>
+              }
             </div>
             <div className='badge-logo-container'>
               <Badge

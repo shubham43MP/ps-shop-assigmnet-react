@@ -22,7 +22,8 @@ const initialState: GlobalReducerType = {
     severity: 'success',
     alertLabel: ''
   },
-  user: null
+  user: null,
+  isLoggedIn: false
 }
 
 export const globalReducer = (state=initialState, action: AnyAction) =>{
@@ -96,17 +97,19 @@ export const globalReducer = (state=initialState, action: AnyAction) =>{
       }
     }
 
-    case ADD_USER :{
+    case ADD_USER : {
       return {
         ...state,
-        user: action.data.user
+        user: action.data.user,
+        isLoggedIn: true
       }
     }
 
     case REMOVE_USER_ON_SIGNOUT :{
       return {
         ...state,
-        user: null
+        user: null,
+        isLoggedIn: false
       }
     }
     

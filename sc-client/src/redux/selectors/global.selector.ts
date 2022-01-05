@@ -22,3 +22,8 @@ export const selectNotificationState = createSelector(
   selectSelf,
   state => state.notification
 )
+
+export const selectIsLogin = createSelector(
+  selectSelf,
+  state => state.isLoggedIn
+)

@@ -1,12 +1,24 @@
-import { combineReducers } from 'redux';
+import { AnyAction, combineReducers } from 'redux';
 import { productReducer } from 'redux/reducers/products.reducer'
 import { bannerReducer } from 'redux/reducers/banner.reducer'
 import { categoryReducer } from 'redux/reducers/category.reducer'
 import { globalReducer } from './reducers/global.reducer';
+import { USER_LOGOUT } from './types/action.verbs';
 
-export default combineReducers({
+const appReducer = combineReducers({
   productReducer,
   bannerReducer,
   categoryReducer,
   globalReducer  
 })
+
+const rootReducer = (state: any, action: AnyAction) => {
+  if (action.type === USER_LOGOUT) {
+    console.log('Logout clicked')
+    return appReducer(undefined, action)
+  }
+
+  return appReducer(state, action)
+}
+
+export default rootReducer

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
+import { useDispatch } from 'react-redux'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
@@ -10,13 +11,14 @@ import FormControl from '@mui/material/FormControl'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import IconButton from '@mui/material/IconButton'
+import { login } from 'config/fire'
+import Notification from 'components/molecules/notification'
+import useNotification from 'hooks/useNotification'
 import { classes } from './style'
 import { LoginState } from './login.type'
 import './styles.scss'
 import './queries.scss'
-import { login } from 'config/fire'
-import Notification from 'components/molecules/notification'
-import useNotification from 'hooks/useNotification'
+import { addUser } from 'redux/actions/action'
 
 const initialState =  {
   password: '',
@@ -27,6 +29,7 @@ const initialState =  {
 function Login() {
   const [ values, setValues ] = useState<LoginState>(initialState)
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const {
     notification,
     handleNotificationClose,
@@ -52,6 +55,7 @@ function Login() {
     try {
       const user  = await login(values.email, values.password)
       sessionStorage.setItem('access-token', user.user.refreshToken)
+      dispatch(addUser({ user }))
       navigate('/home')
     } catch(e) {
       handleNotificationOpen({ al: `Error occured while logging in: ${ e }`, severity: 'error' })

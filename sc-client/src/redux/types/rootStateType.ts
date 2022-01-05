@@ -1,12 +1,12 @@
-import { User, UserCredential } from 'firebase/auth';
+import { UserCredential } from 'firebase/auth';
 import { BannerType } from 'types/banners';
 import { CategoryType } from 'types/category';
 import { Severity } from 'types/common.types';
 import { ProductType } from 'types/products';
 
 export type NotificationOpen = {
-    open: boolean,
-    alertLabel: string;
+  open: boolean,
+  alertLabel: string;
 }
 
 export type CartCount = {
@@ -38,7 +38,8 @@ export type GlobalReducerType = {
   cart: Array<ProductType & CartCount>;
   enableBackdropAddCart: boolean;
   notification: TNotification;
-  user: UserCredential | null
+  user: UserCredential | null;
+  isLoggedIn: boolean;
 }
 
 export type ReducerType = {

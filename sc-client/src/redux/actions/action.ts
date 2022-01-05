@@ -10,7 +10,8 @@ import {
   REMOVE_CART_ITEM,
   EMPTY_CART,
   ADD_USER,
-  REMOVE_USER_ON_SIGNOUT
+  REMOVE_USER_ON_SIGNOUT,
+  USER_LOGOUT
 } from 'redux/types/action.verbs'
 import { CartCount, TNotification } from 'redux/types/rootStateType'
 import { ProductType } from 'types/products'
@@ -32,4 +33,5 @@ export const emptyCart = () => ({ type: EMPTY_CART })
 
 export const addUser = (data:{ user: UserCredential }) => ({ type: ADD_USER, data })
 
-export const removeUserOnSignout = () => ({ type: REMOVE_USER_ON_SIGNOUT }) 
+export const removeUserOnSignout = () => ({ type: REMOVE_USER_ON_SIGNOUT })
+export const userLogout = () => ({ type: USER_LOGOUT })

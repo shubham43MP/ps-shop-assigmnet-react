@@ -8,7 +8,8 @@ import { updateCartItemCount } from 'redux/actions/action'
 import './style.scss'
 
 type TCartProps = {
-  cart: (ProductType & CartCount)[]
+  cart: (ProductType & CartCount)[];
+  handleCartClose: () => void;
 }
 
 const EmptyCart = () => {
@@ -20,13 +21,9 @@ const EmptyCart = () => {
   )
 }
 
-function Cart({ cart = [] }: TCartProps) {
+function Cart({ cart = [], handleCartClose }: TCartProps) {
   const dispatch = useDispatch()
   const isCartEmpty = cart.length === 0
-  const handleClose = () => {
-    console.log('CLOSE MY CART')
-  }
-
   const handleIncDec = (incDecThreshold: number, productId: string) => {
     let [ filteredItems ] = cart.filter(it => it.id === productId)
     filteredItems = {
@@ -55,7 +52,7 @@ function Cart({ cart = [] }: TCartProps) {
           className="close-icon"
           viewBox="0 0 20 20"
           fill="currentColor"
-          onClick={ handleClose }
+          onClick={ handleCartClose }
         >
           <path
             fillRule="evenodd"
@@ -88,18 +85,18 @@ function Cart({ cart = [] }: TCartProps) {
             :
             <EmptyCart />
         }
+        <button className={ `btn-shopping ${ !isCartEmpty ? 'btn-non-empty' : '' }` }>
+          {
+            isCartEmpty ? 'Start Shopping'
+              : (
+                <>
+                  <p>Proceed to checkout</p>
+                  <p>&#8377; <strong>{totalPrice}</strong></p>
+                </>
+              )
+          }        
+        </button>
       </div>
-      <button className={ `btn-shopping ${ !isCartEmpty ? 'btn-non-empty' : '' }` }>
-        {
-          isCartEmpty ? 'Start Shopping'
-            : (
-              <>
-                <p>Proceed to checkout</p>
-                <p>Rs. <strong>{totalPrice}</strong></p>
-              </>
-            )
-        }        
-      </button>
     </div>
   )
 }

@@ -28,10 +28,10 @@ function CartItem({
           <p className="item-unit base-font-color">{ quantity }</p>
           <button className="item-btn" onClick={ () => handleIncrementDecrement(1, itemId) }>+</button>
           <p className="item-unit-price base-font-color">
-            <strong className='strong-x-element'>X</strong>{`Rs. ${ unitPrice }`}</p>
+            <strong className='strong-x-element'>X</strong><span>&#8377;</span>{` ${ unitPrice }`}</p>
         </div>
       </div>      
-      <p className="total-price base-font-color">{'Rs. '}<strong>{`${ unitPrice * quantity }`}</strong></p>
+      <p className="total-price base-font-color">&#8377;<strong>{` ${ unitPrice * quantity }`}</strong></p>
     </div>
   )
 }

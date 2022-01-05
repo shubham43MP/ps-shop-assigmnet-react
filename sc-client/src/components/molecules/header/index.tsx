@@ -28,8 +28,12 @@ function Header() {
     if(location.pathname !== '/products') history('/products') 
   }
 
-  const handleCartClick = () => {
+  const handleCartOpen = () => {
     setbackdropEnable(true)
+  }
+
+  const handleCartClose = () => {
+    setbackdropEnable(false)
   }
   return (
     <>
@@ -85,14 +89,14 @@ function Header() {
                 <ShoppingCartIcon
                   sx={ { color: 'primary.main', transform: iconScaling, cursor: 'pointer' } }
                   color="action"
-                  onClick={ handleCartClick }
+                  onClick={ handleCartOpen }
                 />
               </Badge>
             </div>
           </Grid>
         </Grid>
         <BackdropComponent open={ backdropEnable }>
-          <Cart cart={ cart }/>
+          <Cart cart={ cart } handleCartClose={ handleCartClose }/>
         </BackdropComponent>
       </AppBar> 
     </>

@@ -1,5 +1,11 @@
-import { FirebaseApp, initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, User, signInWithEmailAndPassword } from 'firebase/auth'
+import { initializeApp } from 'firebase/app';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  User,
+  signInWithEmailAndPassword
+} from 'firebase/auth'
 import React from 'react'
 
 const firebaseConfig = {

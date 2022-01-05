@@ -6,6 +6,8 @@ import {
   GLOBAL_ADD_TO_CART_FAILURE,
   SET_NOTIFICATION,
   UPDATE_CART_ITEM_COUNT,
+  REMOVE_CART_ITEM,
+  EMPTY_CART,
 } from 'redux/types/action.verbs'
 import { GlobalReducerType } from 'redux/types/rootStateType'
 
@@ -73,6 +75,21 @@ export const globalReducer = (state=initialState, action: AnyAction) =>{
         ...state,
         cart: updatedCart
 
+      }
+    }
+
+    case REMOVE_CART_ITEM: {
+      const updatedCart = state.cart.filter (ct => ct.id !== action.data.itemId)
+      return {
+        ...state,
+        cart: updatedCart
+      }
+    }
+
+    case EMPTY_CART: {
+      return {
+        ...state,
+        cart: []
       }
     }
     

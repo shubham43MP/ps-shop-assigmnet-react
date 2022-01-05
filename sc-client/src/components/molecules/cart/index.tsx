@@ -4,7 +4,7 @@ import { ProductType } from 'types/products'
 import CartItem from 'components/atoms/cart-item'
 import { LOWEST_PRICE_PROMOTION } from 'apis/constants'
 import { CartCount } from 'redux/types/rootStateType'
-import { updateCartItemCount } from 'redux/actions/action'
+import { removeCartItem, updateCartItemCount } from 'redux/actions/action'
 import './style.scss'
 
 type TCartProps = {
@@ -26,6 +26,9 @@ function Cart({ cart = [], handleClose }: TCartProps) {
   const isCartEmpty = cart.length === 0
   const handleIncDec = (incDecThreshold: number, productId: string) => {
     let [ filteredItems ] = cart.filter(it => it.id === productId)
+    if(incDecThreshold === -1 && filteredItems.count === 0) {
+      return
+    }
     filteredItems = {
       ...filteredItems,
       count: filteredItems.count + incDecThreshold
@@ -73,7 +76,8 @@ function Cart({ cart = [], handleClose }: TCartProps) {
                     heading= { item.name }
                     imageURL = { item.imageURL }
                     quantity = { item.count }
-                    unitPrice = { item.price }                  
+                    unitPrice = { item.price }
+                    handleDeleteCartItem={ (itemId: string) => dispatch(removeCartItem({ itemId })) }               
                   />
                 ))
               }

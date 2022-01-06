@@ -43,3 +43,19 @@
   }
 }
 
+@media (max-width: 26.5625em) {
+  .sabka-bazar-logo {
+    $width: 8rem;
+    width: $width;
+    height: ($width / 2.24 + .8rem);
+  }
+
+  .home-product-mobile-icons {
+    margin-left: 1rem;
+  }
+
+  .badge-logo-container {
+    margin-top: 1rem;
+  }
+}
+

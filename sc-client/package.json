@@ -38,7 +38,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.{ts,tsx}",
-    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'"
+    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": [
@@ -68,6 +69,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "source-map-explorer": "^2.5.2"
   }
 }

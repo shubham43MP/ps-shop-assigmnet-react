@@ -39,6 +39,7 @@ const Root = () => (
       <Router>
         <Routes>
           <Route path='/home' element={ LoginWrapper(Homepage) } />
+          <Route path='/' element={ LoginWrapper(Homepage) } />
           <Route path='/login' element={ NonLoginPages(Login) } />
           <Route path='/register' element={ NonLoginPages(Register) } />
           <Route path='/products' element={ LoginWrapper(Products) } />   

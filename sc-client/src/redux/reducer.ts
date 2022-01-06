@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AnyAction, combineReducers } from 'redux';
 import { productReducer } from 'redux/reducers/products.reducer'
 import { bannerReducer } from 'redux/reducers/banner.reducer'

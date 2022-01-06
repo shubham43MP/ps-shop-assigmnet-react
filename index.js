@@ -9,4 +9,4 @@ const canned = require('canned')
 
 can = canned('./server', opts)
 
-http.createServer(can).listen(5000)
+http.createServer(can).listen(3001)

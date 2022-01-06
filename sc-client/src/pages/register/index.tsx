@@ -1,11 +1,11 @@
 import React, { lazy } from 'react'
-import TextField from '@mui/material/TextField'
 import { useNavigate } from 'react-router'
 import { signup } from 'config/fire'
 import useNotification from 'hooks/useNotification'
 import './style.scss'
 import { classes } from './style'
 
+const TextField = lazy(() =>import ('@mui/material/TextField'))
 const Notification = lazy(() => import('components/molecules/notification'))
 const NonLoginWrapper = lazy(() => import('components/wrappers/non-login-wrapper'))
 const NavbarWrapper = lazy(() => import('components/wrappers/navbar-wrapper'))

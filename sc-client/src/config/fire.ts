@@ -6,16 +6,26 @@ import {
   User,
   signInWithEmailAndPassword
 } from 'firebase/auth'
+
+import {
+  FIREBASE_API_KEY,
+  FIREBASE_AUTH_DOMAIN,
+  FIREBASE_PROJECT_ID,
+  FIREBASE_STORAGE_BUCKET,
+  FIREBASE_MESSAGING_SENDER_ID,
+  FIREBASE_APP_ID,
+  FIREBASE_MEASUREMENT_ID,
+} from 'apis/constants'
 import React from 'react'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAEQfmztmIZ76v_rr4wOsKwKUSqG-I372M',
-  authDomain: 'shopping-cart-applicatio-471af.firebaseapp.com',
-  projectId: 'shopping-cart-applicatio-471af',
-  storageBucket: 'shopping-cart-applicatio-471af.appspot.com',
-  messagingSenderId: '906910438051',
-  appId: '1:906910438051:web:1c18c34f565518e462a516',
-  measurementId: 'G-TY2FZGQMLZ'
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAIN,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+  appId: FIREBASE_APP_ID,
+  measurementId: FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig)

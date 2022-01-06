@@ -94,7 +94,6 @@ function Register() {
             onChange={ handleChange('confirmPassword') }
           />
           <button className="btn-login" onClick={ handleSignUp }> Signup </button>
-          <button className="btn-login" onClick={ () => navigate('/login') }> Redirect to Login </button>
         </div>
       </div>
       <Notification

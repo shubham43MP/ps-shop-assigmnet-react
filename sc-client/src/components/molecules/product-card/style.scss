@@ -12,11 +12,12 @@
   -webkit-box-shadow: 4px 4px 4px #e0e0e0;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 1s;
 }
 .pc-container:hover {
-  box-shadow: 8px 8px 8px #e0e0e0;
-  -moz-box-shadow: 8px 8px 8px #e0e0e0;
-  -webkit-box-shadow: 8px 8px 8px #e0e0e0;
+  box-shadow: 15px 15px 15px #e0e0e0;
+  -moz-box-shadow: 15px 15px 15px #e0e0e0;
+  -webkit-box-shadow: 15px 15px 15px #e0e0e0;
 }
 
 .pc-header {

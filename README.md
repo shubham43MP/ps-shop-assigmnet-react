@@ -26,7 +26,7 @@ yarn start or npm start
 The JSON server will get started at `localhost:5000`
 
 ### Installing dependencies and starting the client 
-Open another terminal and hit following commands
+Open another terminal and hit following commands:
 
 ```
 npm install
@@ -36,4 +36,4 @@ yarn install
 yarn run start:client
 ```
 
-The client will get started at localhost:3000 
+The client will get started at `localhost:3000` 

@@ -9,6 +9,8 @@ import { getBanner, getCategory } from 'redux/actions/action'
 import { setProduct } from 'redux/actions/action'
 import CircularLoader from 'components/molecules/circular-loader'
 import './style.scss'
+import LogggedinWrapper from 'components/wrappers/login-wrapper'
+import NavbarWrapper from 'components/wrappers/navbar-wrapper'
 
 function Homepage() {
   const dispatch = useDispatch()
@@ -28,31 +30,35 @@ function Homepage() {
   }
   
   return (
-    <div>
-      {
-        loading ?
-          <div className='home-loader'>
-            <CircularLoader />
-          </div>
-          :
-          <>
-            <Banners data={ banners } />
-            {
-              category.length > 0 && category.map((cat, index) => (
-                <OfferCategory
-                  imageURL={ cat.imageUrl }
-                  title={ cat.name }
-                  subtitle={ cat.description }
-                  key={ cat.id }
-                  direction={ index }
-                  categoryId={ cat.id }
-                  handleOfferClick={ handleOfferClick }
-                />
-              ))
-            }
-          </>
-      }
-    </div>
+    <>
+      <LogggedinWrapper>        
+        <NavbarWrapper>
+          {
+            loading ?
+              <div className='home-loader'>
+                <CircularLoader />
+              </div>
+              :
+              <>
+                <Banners data={ banners } />
+                {
+                  category.length > 0 && category.map((cat, index) => (
+                    <OfferCategory
+                      imageURL={ cat.imageUrl }
+                      title={ cat.name }
+                      subtitle={ cat.description }
+                      key={ cat.id }
+                      direction={ index }
+                      categoryId={ cat.id }
+                      handleOfferClick={ handleOfferClick }
+                    />
+                  ))
+                }
+              </>
+          }
+        </NavbarWrapper>
+      </LogggedinWrapper>
+    </>
   )
 }
 

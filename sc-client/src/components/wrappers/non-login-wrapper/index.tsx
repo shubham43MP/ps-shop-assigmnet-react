@@ -8,14 +8,14 @@ type TNonLoginWrapper = {
 
 function NonLoginWrapper({ children }: TNonLoginWrapper) {
   return (
-    <div>
+    <>
       {
         hasAccessTokenSessionStorage() ?
           <><Navigate to="/home" /></>
           :
           <>{ children }</>
       }      
-    </div>
+    </>
   )
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import './index.css'
 import Root from './Root'
@@ -9,7 +10,9 @@ import Store from './redux/store'
 ReactDOM.render(
   <Provider store={ Store }>
     <React.StrictMode>
-      <Root />
+      <Router>
+        <Root />
+      </Router>
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')

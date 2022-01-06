@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "fix": "cd sc-client && yarn lint:fix && cd ..",
-    "start:client": "cd sc-client && yarn start"
+    "start:client": "cd sc-client && yarn start",
+    "install:client": "cd sc-client && yarn"
   },
   "author": "",
   "license": "MIT",

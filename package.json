@@ -1,5 +1,5 @@
 {
-  "name": "code-exercise",
+  "name": "shopping-cart-assignent",
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "start:client": "cd sc-client && yarn start",
     "install:client": "cd sc-client && yarn"
   },
-  "author": "",
+  "author": "Shubham Dixit",
   "license": "MIT",
   "dependencies": {
     "canned": "^0.3.12"

@@ -1,26 +1,28 @@
-import React, { useState } from 'react'
+import React, { lazy, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useDispatch } from 'react-redux'
-import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
-import Grid from '@mui/material/Grid'
-import OutlinedInput from '@mui/material/OutlinedInput'
-import InputLabel from '@mui/material/InputLabel'
-import InputAdornment from '@mui/material/InputAdornment'
-import FormControl from '@mui/material/FormControl'
-import Visibility from '@mui/icons-material/Visibility'
-import VisibilityOff from '@mui/icons-material/VisibilityOff'
-import IconButton from '@mui/material/IconButton'
 import { login } from 'config/fire'
-import Notification from 'components/molecules/notification'
 import useNotification from 'hooks/useNotification'
 import { classes } from './style'
 import { LoginState } from './login.type'
+import { addUser } from 'redux/actions/action'
 import './styles.scss'
 import './queries.scss'
-import { addUser } from 'redux/actions/action'
-import NonLoginWrapper from 'components/wrappers/non-login-wrapper'
-import NavbarWrapper from 'components/wrappers/navbar-wrapper'
+
+const TextField = lazy(() => import('@mui/material/TextField'))
+const IconButton = lazy(() => import('@mui/material/IconButton'))
+const Typography = lazy(() => import('@mui/material/Typography'))
+const Grid = lazy(() => import('@mui/material/Grid'))
+const OutlinedInput = lazy(() => import('@mui/material/OutlinedInput'))
+const InputLabel = lazy(() => import('@mui/material/InputLabel'))
+const InputAdornment = lazy(() => import('@mui/material/InputAdornment'))
+const FormControl = lazy(() => import('@mui/material/FormControl'))
+const Visibility = lazy(() => import('@mui/icons-material/Visibility'))
+const VisibilityOff = lazy(() => import('@mui/icons-material/VisibilityOff'))
+const NonLoginWrapper = lazy(() => import('components/wrappers/non-login-wrapper'))
+const NavbarWrapper = lazy(() => import('components/wrappers/navbar-wrapper'))
+const SuspenseWrapper = lazy(() => import('components/wrappers/suspense-wrapper'))
+const Notification = lazy(() => import('components/molecules/notification'))
 
 const initialState =  {
   password: '',
@@ -66,73 +68,75 @@ function Login() {
 
   return (
     <>
-      <NonLoginWrapper>
-        <NavbarWrapper>
-          <div>
-            <Grid container className="login-text-container login-container">
-              <Grid
-                item
-                xs={ 12 }
-                sm={ 12 }
-                md = { 6 }
-                lg = { 6 }
-              >
-                <Typography sx={ classes.loginTypo }>
+      <SuspenseWrapper>
+        <NonLoginWrapper>
+          <NavbarWrapper>
+            <div>
+              <Grid container className="login-text-container login-container">
+                <Grid
+                  item
+                  xs={ 12 }
+                  sm={ 12 }
+                  md = { 6 }
+                  lg = { 6 }
+                >
+                  <Typography sx={ classes.loginTypo }>
                 Login
-                </Typography>
-                <Typography sx={ classes.loginMessage }>
+                  </Typography>
+                  <Typography sx={ classes.loginMessage }>
                 Get access to your Orders, Wishlist and Recommendation
-                </Typography>
-              </Grid>
-              <Grid
-                item
-                xs={ 12 }
-                sm={ 12 }
-                md = { 6 }
-                lg = { 6 }
-                className='em-pass-container'
-              >
-                <TextField
-                  label="Email"
-                  id="outlined-start-adornment"
-                  sx={ classes.emailPasswordSizes }
-                  value={ values.email }
-                  onChange={ handleChange('email') }
-                />
-                <FormControl sx={ classes.emailPasswordSizes } variant="outlined">
-                  <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                  <OutlinedInput
-                    id="outlined-adornment-password"
-                    type={ values.showPassword ? 'text' : 'password' }
-                    value={ values.password }
-                    onChange={ handleChange('password') }
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={ handleClickShowPassword }
-                          onMouseDown={ handleMouseDownPassword }
-                          edge="end"
-                        >
-                          {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                    label="Password"
+                  </Typography>
+                </Grid>
+                <Grid
+                  item
+                  xs={ 12 }
+                  sm={ 12 }
+                  md = { 6 }
+                  lg = { 6 }
+                  className='em-pass-container'
+                >
+                  <TextField
+                    label="Email"
+                    id="outlined-start-adornment"
+                    sx={ classes.emailPasswordSizes }
+                    value={ values.email }
+                    onChange={ handleChange('email') }
                   />
-                  <button className="btn-login" onClick={ handleLogin } > Login </button>
-                </FormControl>
+                  <FormControl sx={ classes.emailPasswordSizes } variant="outlined">
+                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                    <OutlinedInput
+                      id="outlined-adornment-password"
+                      type={ values.showPassword ? 'text' : 'password' }
+                      value={ values.password }
+                      onChange={ handleChange('password') }
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={ handleClickShowPassword }
+                            onMouseDown={ handleMouseDownPassword }
+                            edge="end"
+                          >
+                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                      label="Password"
+                    />
+                    <button className="btn-login" onClick={ handleLogin } > Login </button>
+                  </FormControl>
+                </Grid>
               </Grid>
-            </Grid>
-          </div>
-          <Notification
-            severity={ notification.severity }
-            alertLabel={ notification.alertLabel }
-            handleClose={ handleNotificationClose }
-            open={ notification.open }
-          />
-        </NavbarWrapper>
-      </NonLoginWrapper>
+            </div>
+            <Notification
+              severity={ notification.severity }
+              alertLabel={ notification.alertLabel }
+              handleClose={ handleNotificationClose }
+              open={ notification.open }
+            />
+          </NavbarWrapper>
+        </NonLoginWrapper>
+      </SuspenseWrapper>
     </>
   )
 }

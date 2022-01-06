@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import TextField from '@mui/material/TextField'
 import { useNavigate } from 'react-router'
 import { signup } from 'config/fire'
-import Notification from 'components/molecules/notification'
 import useNotification from 'hooks/useNotification'
 import './style.scss'
 import { classes } from './style'
-import NonLoginWrapper from 'components/wrappers/non-login-wrapper'
-import NavbarWrapper from 'components/wrappers/navbar-wrapper'
-import SuspenseWrapper from 'components/wrappers/suspense-wrapper'
+
+const Notification = lazy(() => import('components/molecules/notification'))
+const NonLoginWrapper = lazy(() => import('components/wrappers/non-login-wrapper'))
+const NavbarWrapper = lazy(() => import('components/wrappers/navbar-wrapper'))
+const SuspenseWrapper = lazy(() => import('components/wrappers/suspense-wrapper'))
 
 const initialState = {
   password: '',

@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
-import OfferCategory from 'components/molecules/offer-category'
-import Banners from 'components/molecules/banners'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectBanner, selectLoading } from 'redux/selectors/banner.category'
 import { selectCategory } from 'redux/selectors/category.selector'
 import { getBanner, getCategory } from 'redux/actions/action'
 import { setProduct } from 'redux/actions/action'
-import CircularLoader from 'components/molecules/circular-loader'
 import './style.scss'
-import LogggedinWrapper from 'components/wrappers/login-wrapper'
-import NavbarWrapper from 'components/wrappers/navbar-wrapper'
-import SuspenseWrapper from 'components/wrappers/suspense-wrapper'
+
+const OfferCategory = lazy(() => import('components/molecules/offer-category'))
+const Banners = lazy(() => import('components/molecules/banners'))
+const CircularLoader = lazy(() => import('components/molecules/circular-loader'))
+const LogggedinWrapper = lazy(() => import('components/wrappers/login-wrapper'))
+const NavbarWrapper = lazy(() => import('components/wrappers/navbar-wrapper'))
+const SuspenseWrapper = lazy(() => import('components/wrappers/suspense-wrapper'))
 
 function Homepage() {
   const dispatch = useDispatch()

@@ -2,8 +2,8 @@ import React from 'react'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
+import Button from '@mui/material/Button'
 import './styles.scss'
-import { Button } from '@mui/material'
 
 type OfferCategoryType = {
     imageURL: string;

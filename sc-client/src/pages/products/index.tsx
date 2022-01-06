@@ -1,8 +1,6 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import CircularProgress from '@mui/material/CircularProgress';
 import { SelectChangeEvent } from '@mui/material/Select';
-import ProductCard from 'components/molecules/product-card'
 import { selectProducts, selectProdLoading } from 'redux/selectors/product.selector'
 import { getProducts, setProduct, addToCart } from 'redux/actions/action'
 import {
@@ -10,16 +8,19 @@ import {
   selectEnableBackdropAddCart,
   selectGlobalCart,
 } from 'redux/selectors/global.selector'
-import CircularLoader from 'components/molecules/circular-loader'
-import BackdropComponent from 'components/molecules/backdrop'
-import Notification from 'components/molecules/notification'
-import LogggedinWrapper from 'components/wrappers/login-wrapper'
-import NavbarWrapper from 'components/wrappers/navbar-wrapper'
 import useNotification from 'hooks/useNotification'
-import SelectComponentMobile from './product-select-mobile';
 import { buttonContainer } from './misc'
 import './style.scss'
-import SuspenseWrapper from 'components/wrappers/suspense-wrapper';
+
+const SuspenseWrapper = lazy(() => import('components/wrappers/suspense-wrapper'))
+const CircularLoader = lazy(() => import('components/molecules/circular-loader'))
+const BackdropComponent = lazy(() => import('components/molecules/backdrop'))
+const Notification = lazy(() => import('components/molecules/notification'))
+const LogggedinWrapper = lazy(() => import('components/wrappers/login-wrapper'))
+const NavbarWrapper = lazy(() => import('components/wrappers/navbar-wrapper'))
+const SelectComponentMobile = lazy(() => import('./product-select-mobile'))
+const ProductCard = lazy(() => import('components/molecules/product-card'))
+const CircularProgress = lazy(() => import('@mui/material/CircularProgress'))
 
 function Products() {
   const dispatch = useDispatch()
@@ -75,8 +76,6 @@ function Products() {
                       {btn.label}
                     </button>
                   ))
-                }
-                {
                 }
               </nav>
               <div className='select-component-mobile'>

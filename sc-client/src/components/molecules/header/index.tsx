@@ -33,7 +33,7 @@ function Header() {
   }
 
   const handleCartOpen = () => {
-    setbackdropEnable(true)
+    if(isLoggedIn) setbackdropEnable(true)
   }
 
   const handleCartClose = () => {

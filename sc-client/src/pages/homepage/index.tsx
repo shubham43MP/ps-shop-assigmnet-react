@@ -11,6 +11,7 @@ import CircularLoader from 'components/molecules/circular-loader'
 import './style.scss'
 import LogggedinWrapper from 'components/wrappers/login-wrapper'
 import NavbarWrapper from 'components/wrappers/navbar-wrapper'
+import SuspenseWrapper from 'components/wrappers/suspense-wrapper'
 
 function Homepage() {
   const dispatch = useDispatch()
@@ -31,33 +32,35 @@ function Homepage() {
   
   return (
     <>
-      <LogggedinWrapper>        
-        <NavbarWrapper>
-          {
-            loading ?
-              <div className='home-loader'>
-                <CircularLoader />
-              </div>
-              :
-              <>
-                <Banners data={ banners } />
-                {
-                  category.length > 0 && category.map((cat, index) => (
-                    <OfferCategory
-                      imageURL={ cat.imageUrl }
-                      title={ cat.name }
-                      subtitle={ cat.description }
-                      key={ cat.id }
-                      direction={ index }
-                      categoryId={ cat.id }
-                      handleOfferClick={ handleOfferClick }
-                    />
-                  ))
-                }
-              </>
-          }
-        </NavbarWrapper>
-      </LogggedinWrapper>
+      <SuspenseWrapper>
+        <LogggedinWrapper>        
+          <NavbarWrapper>
+            {
+              loading ?
+                <div className='home-loader'>
+                  <CircularLoader />
+                </div>
+                :
+                <>
+                  <Banners data={ banners } />
+                  {
+                    category.length > 0 && category.map((cat, index) => (
+                      <OfferCategory
+                        imageURL={ cat.imageUrl }
+                        title={ cat.name }
+                        subtitle={ cat.description }
+                        key={ cat.id }
+                        direction={ index }
+                        categoryId={ cat.id }
+                        handleOfferClick={ handleOfferClick }
+                      />
+                    ))
+                  }
+                </>
+            }
+          </NavbarWrapper>
+        </LogggedinWrapper>
+      </SuspenseWrapper>
     </>
   )
 }

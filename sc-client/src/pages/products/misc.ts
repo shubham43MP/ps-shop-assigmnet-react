@@ -1,6 +1,11 @@
 import { CATEGORY_IDENTIFIER } from 'apis/constants'
 
-export const buttonContainer = [
+export type TBC = {
+  id: CATEGORY_IDENTIFIER;
+  label: string;
+}
+
+export const buttonContainer: TBC[] = [
   {
     label: 'Fruits & Vegetables',
     id: CATEGORY_IDENTIFIER.fruit_veg

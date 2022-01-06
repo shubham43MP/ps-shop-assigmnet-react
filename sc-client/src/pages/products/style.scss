@@ -52,6 +52,10 @@
 
 }
 
+.select-component-mobile {
+  display: none;
+}
+
 @media (max-width: 87.5em) {
   .pc-grid--col-3 {
     grid-template-columns: repeat(3, 1fr);
@@ -72,13 +76,13 @@
   }
 
   .navigation-container {
-    display: flex;
-    flex-direction: column;
+    display: none;
+  }
+
+  .select-component-mobile {
+    display: block;
+    margin-top: 1rem;
     background-color: #E0E0E0;
-    border-radius: 3px;
-    flex-shrink: 2;
-    height: fit-content;
-    min-height: fit-content;
   }
 
   .product-display {

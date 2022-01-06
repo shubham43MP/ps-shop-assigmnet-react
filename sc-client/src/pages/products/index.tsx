@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import CircularProgress from '@mui/material/CircularProgress';
+import { SelectChangeEvent } from '@mui/material/Select';
 import ProductCard from 'components/molecules/product-card'
 import { selectProducts, selectProdLoading } from 'redux/selectors/product.selector'
 import { getProducts, setProduct, addToCart } from 'redux/actions/action'
@@ -15,6 +16,7 @@ import './style.scss'
 import BackdropComponent from 'components/molecules/backdrop'
 import Notification from 'components/molecules/notification'
 import useNotification from 'hooks/useNotification'
+import SelectComponentMobile from './product-select-mobile';
 
 function Products() {
   const dispatch = useDispatch()
@@ -48,6 +50,10 @@ function Products() {
     const [ cartMember ] = prod.filter(pr => pr.id === id)
     dispatch(addToCart({ item: cartMember }))
   }
+
+  const handleChange = (event: SelectChangeEvent) => {
+    handleNavClick(event.target.value)
+  }
   
   return (
     <>
@@ -64,7 +70,16 @@ function Products() {
               </button>
             ))
           }
+          {
+          }
         </nav>
+        <div className='select-component-mobile'>
+          <SelectComponentMobile
+            buttonContainer={ buttonContainer }
+            handleChange={ handleChange }
+            value={ prodSelected }
+          />
+        </div>
         <section className="product-display">
           {
             loading ? (
@@ -75,7 +90,7 @@ function Products() {
               <div className='product-container-grid pc-grid--col-3 pc-grid--col-2 pc-grid--col-1'>
                 {
                   prod.length > 0 && prod.map(product => {
-                    if(prodSelected === null) {
+                    if(prodSelected === undefined) {
                       return (<ProductCard
                         key={ product.id }
                         heading={ product.name }

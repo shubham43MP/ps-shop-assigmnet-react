@@ -16,7 +16,7 @@ import {
 import { GlobalReducerType } from 'redux/types/rootStateType'
 
 const initialState: GlobalReducerType = {
-  productSelected: null,
+  productSelected: undefined,
   cart: [],
   enableBackdropAddCart: false,
   notification: {

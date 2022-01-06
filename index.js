@@ -4,7 +4,7 @@ const canned = require('canned')
   logger: process.stdout,
   cors: true,
   cors_headers: ['Content-Type', 'Location'],
-  response_delay: 1500
+  response_delay: 800
 }
 
 can = canned('./server', opts)

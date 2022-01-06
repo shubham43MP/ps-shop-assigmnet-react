@@ -41,8 +41,8 @@ function Header() {
   }
 
   const handleLogout = () => {
-    dispatch(userLogout())
     sessionStorage.removeItem('access-token')
+    dispatch(userLogout())
     history('/login')
   }
   return (

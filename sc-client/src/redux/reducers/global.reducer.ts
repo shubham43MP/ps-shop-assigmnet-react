@@ -1,3 +1,4 @@
+import { hasAccessTokenSessionStorage } from 'config/utitlities'
 import { AnyAction } from 'redux'
 import {
   SET_GLOBAL_PRODUCT,
@@ -9,7 +10,8 @@ import {
   REMOVE_CART_ITEM,
   EMPTY_CART,
   ADD_USER,
-  REMOVE_USER_ON_SIGNOUT
+  REMOVE_USER_ON_SIGNOUT,
+  USER_LOGOUT
 } from 'redux/types/action.verbs'
 import { GlobalReducerType } from 'redux/types/rootStateType'
 
@@ -23,7 +25,7 @@ const initialState: GlobalReducerType = {
     alertLabel: ''
   },
   user: null,
-  isLoggedIn: false
+  isLoggedIn: hasAccessTokenSessionStorage()
 }
 
 export const globalReducer = (state=initialState, action: AnyAction) =>{
@@ -106,6 +108,14 @@ export const globalReducer = (state=initialState, action: AnyAction) =>{
     }
 
     case REMOVE_USER_ON_SIGNOUT :{
+      return {
+        ...state,
+        user: null,
+        isLoggedIn: false
+      }
+    }
+
+    case USER_LOGOUT :{
       return {
         ...state,
         user: null,

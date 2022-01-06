@@ -6,8 +6,17 @@
   max-width: 22rem;
   gap: .8rem;
   padding: 1rem;
-  box-shadow: 10px 0 5px -2px #e0e0e0;
   justify-self: center;
+  box-shadow: 4px 4px 4px #e0e0e0;
+  -moz-box-shadow: 4px 4px 4px #e0e0e0;
+  -webkit-box-shadow: 4px 4px 4px #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pc-container:hover {
+  box-shadow: 8px 8px 8px #e0e0e0;
+  -moz-box-shadow: 8px 8px 8px #e0e0e0;
+  -webkit-box-shadow: 8px 8px 8px #e0e0e0;
 }
 
 .pc-header {

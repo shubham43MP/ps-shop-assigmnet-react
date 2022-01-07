@@ -1,4 +1,6 @@
 import { put } from 'redux-saga/effects'
+import axios from 'axios'
+import { AnyAction } from 'redux'
 import {
   GET_PRODUCTS_FALURE,
   GET_PRODUCTS_SUCCESS,
@@ -9,8 +11,7 @@ import {
   GLOBAL_ADD_TO_CART_SUCCESS,
   GLOBAL_ADD_TO_CART_FAILURE,
   SET_NOTIFICATION
-} from '../../types/action.verbs'
-import axios from 'axios'
+} from 'redux/types/action.verbs'
 import {
   SHOPPING_PRODUCTS,
   SHOPPING_CATEGORIES,
@@ -18,7 +19,6 @@ import {
   SHOPPING_ADD_TO_CART_POST
 } from 'apis/urls'
 import { ResponseGenerator } from 'types/axios-response'
-import { AnyAction } from 'redux'
 
 export function* getProductsWorker() {
   try {

@@ -22,7 +22,6 @@ const ProductCard = ({
     <h3 className='pc-header'>{ heading }</h3>
     <article className='pc-article'>
       <img className="pc-article-img" src={ imageURL } alt={ heading }/>
-      {/* <p className='pc-article-desc'>{`${ productDescription.substring(0, 95) }...`}</p> */}
       <div className='prod-desc-container'>
         <p className='pc-article-desc'>{`${ productDescription }`}</p>
       </div>

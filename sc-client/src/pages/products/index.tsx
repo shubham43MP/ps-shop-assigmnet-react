@@ -11,6 +11,7 @@ import {
 import useNotification from 'hooks/useNotification'
 import { buttonContainer } from './misc'
 import './style.scss'
+import LoadingWrapper from 'components/wrappers/loading-wrapper';
 
 const SuspenseWrapper = lazy(() => import('components/wrappers/suspense-wrapper'))
 const CircularLoader = lazy(() => import('components/molecules/circular-loader'))
@@ -87,11 +88,7 @@ function Products() {
               </div>
               <section className="product-display">
                 {
-                  loading ? (
-                    <div className='circular-loader'>
-                      <CircularLoader />
-                    </div>
-                  ) : 
+                  <LoadingWrapper loading={ loading }>
                     <div className='product-container-grid pc-grid--col-3 pc-grid--col-2 pc-grid--col-1'>
                       {
                         prod.length > 0 && prod.map(product => {
@@ -122,6 +119,7 @@ function Products() {
                         })
                       }
                     </div>
+                  </LoadingWrapper>
                 }
               </section>
             </div>

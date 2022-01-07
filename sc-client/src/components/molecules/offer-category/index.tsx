@@ -21,11 +21,12 @@ function OfferCategory({
   direction=0,
   categoryId,
   handleOfferClick
-}: OfferCategoryType) { 
+}: OfferCategoryType) {
+  const isDirectionEven = direction % 2 === 0
   return (
     <>
       <Card className='offer-cat-base'>
-        <Grid direction={ direction % 2 === 0 ? 'row' : 'row-reverse' } container spacing={ 2 }>
+        <Grid direction={ isDirectionEven ? 'row' : 'row-reverse' } container spacing={ 2 }>
           <Grid
             item
             xs={ 6 }
@@ -49,7 +50,13 @@ function OfferCategory({
               </Button>
             </div>
           </Grid>
-          <Grid item xs={ 6 } md={ 6 } lg={ 6 } className="image-container">
+          <Grid
+            item
+            xs={ 6 }
+            md={ 6 }
+            lg={ 6 }
+            className={ `image-container ${ isDirectionEven ? 'img-left' : 'img-right' }` }
+          >
             <img id='Offer Category Image' className='productImage' src={ imageURL } alt="Offer"/>
           </Grid>
         </Grid>

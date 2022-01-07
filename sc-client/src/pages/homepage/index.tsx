@@ -36,29 +36,31 @@ function Homepage() {
       <SuspenseWrapper>
         <LogggedinWrapper>        
           <NavbarWrapper>
-            {
-              loading ?
-                <div className='home-loader'>
-                  <CircularLoader />
-                </div>
-                :
-                <>
-                  <Banners data={ banners } />
-                  {
-                    category.length > 0 && category.map((cat, index) => (
-                      <OfferCategory
-                        imageURL={ cat.imageUrl }
-                        title={ cat.name }
-                        subtitle={ cat.description }
-                        key={ cat.id }
-                        direction={ index }
-                        categoryId={ cat.id }
-                        handleOfferClick={ handleOfferClick }
-                      />
-                    ))
-                  }
-                </>
-            }
+            <section className='home-content'>
+              {
+                loading ?
+                  <div className='home-loader'>
+                    <CircularLoader />
+                  </div>
+                  :
+                  <>
+                    <Banners data={ banners } />
+                    {
+                      category.length > 0 && category.map((cat, index) => (
+                        <OfferCategory
+                          imageURL={ cat.imageUrl }
+                          title={ cat.name }
+                          subtitle={ cat.description }
+                          key={ cat.id }
+                          direction={ index }
+                          categoryId={ cat.id }
+                          handleOfferClick={ handleOfferClick }
+                        />
+                      ))
+                    }
+                  </>
+              }
+            </section>
           </NavbarWrapper>
         </LogggedinWrapper>
       </SuspenseWrapper>

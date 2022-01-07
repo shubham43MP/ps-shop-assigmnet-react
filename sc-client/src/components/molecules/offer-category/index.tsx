@@ -25,10 +25,10 @@ function OfferCategory({
   return (
     <>
       <Card className='offer-cat-base'>
-        <Grid direction={ direction %2 === 0 ? 'row' : 'row-reverse' } container spacing={ 2 }>
+        <Grid direction={ direction % 2 === 0 ? 'row' : 'row-reverse' } container spacing={ 2 }>
           <Grid
             item
-            xs={ 3 }
+            xs={ 6 }
             md={ 6 }
             lg={ 6 }
             className='ts-container'
@@ -49,7 +49,7 @@ function OfferCategory({
               </Button>
             </div>
           </Grid>
-          <Grid item xs={ 9 } md={ 6 } lg={ 6 }>
+          <Grid item xs={ 6 } md={ 6 } lg={ 6 } className="image-container">
             <img id='Offer Category Image' className='productImage' src={ imageURL } alt="Offer"/>
           </Grid>
         </Grid>

@@ -9,7 +9,7 @@
 
 .productImage {
     max-width: 100%;
-    width: 500px;
+    width: 31.25rem;
     object-fit: cover;
     object-position: bottom;
 }
@@ -46,6 +46,16 @@
     align-items: center;
 }
 
+.title-subtitle-button-container {
+    padding: 0.8rem;
+}
+
+.image-container {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 @media (max-width: 26.5625em) {
     .title {
         font-size: 1.1rem !important;
@@ -57,5 +67,9 @@
 
     .offer-cat-button {
         font-size: .5rem !important;
+    }
+
+    .productImage {
+        max-width: 75%;
     }
 }

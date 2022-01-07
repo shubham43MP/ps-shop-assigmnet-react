@@ -11,10 +11,9 @@ import {
 import useNotification from 'hooks/useNotification'
 import { buttonContainer } from './misc'
 import './style.scss'
-import LoadingWrapper from 'components/wrappers/loading-wrapper';
 
 const SuspenseWrapper = lazy(() => import('components/wrappers/suspense-wrapper'))
-const CircularLoader = lazy(() => import('components/molecules/circular-loader'))
+const LoadingWrapper = lazy(() => import('components/wrappers/loading-wrapper'))
 const BackdropComponent = lazy(() => import('components/molecules/backdrop'))
 const Notification = lazy(() => import('components/molecules/notification'))
 const LogggedinWrapper = lazy(() => import('components/wrappers/login-wrapper'))

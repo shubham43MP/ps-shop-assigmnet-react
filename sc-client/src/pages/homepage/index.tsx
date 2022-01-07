@@ -9,7 +9,7 @@ import './style.scss'
 
 const OfferCategory = lazy(() => import('components/molecules/offer-category'))
 const Banners = lazy(() => import('components/molecules/banners'))
-const CircularLoader = lazy(() => import('components/molecules/circular-loader'))
+const LoadingWrapper = lazy(() => import('components/wrappers/loading-wrapper'))
 const LogggedinWrapper = lazy(() => import('components/wrappers/login-wrapper'))
 const NavbarWrapper = lazy(() => import('components/wrappers/navbar-wrapper'))
 const SuspenseWrapper = lazy(() => import('components/wrappers/suspense-wrapper'))
@@ -38,12 +38,8 @@ function Homepage() {
           <NavbarWrapper>
             <section className='home-content'>
               {
-                loading ?
-                  <div className='home-loader'>
-                    <CircularLoader />
-                  </div>
-                  :
-                  <>
+                <>
+                  <LoadingWrapper loading={ loading }>
                     <Banners data={ banners } />
                     {
                       category.length > 0 && category.map((cat, index) => (
@@ -58,7 +54,8 @@ function Homepage() {
                         />
                       ))
                     }
-                  </>
+                  </LoadingWrapper>
+                </>
               }
             </section>
           </NavbarWrapper>

@@ -1,10 +1,10 @@
 export const classes = {
   loginTypo: {
-    fontSize: { xs: '25px', md: '37.5px', xl: '50px', lg: '50px' },
+    fontSize: { xs: '1.25rem', md: '2.34rem', xl: '2.5rem', lg: '2.5rem' },
     fontWeight: 900,
   },
   loginMessage: {
-    fontSize: { xs: '12.5px', md: '20px', xl: '25px', lg: '25px' },
+    fontSize: { xs: '1.2rem', md: '1.25rem', xl: '1.25rem', lg: '1.25rem' },
   },
   emailPasswordSizes: {
     m: 1,

@@ -25,11 +25,11 @@ function Header() {
   const [ backdropEnable, setbackdropEnable ] = React.useState<boolean>(false)
 
   const handleHomeClick = () => {
-    if(location.pathname !== '/home') history('/home')
+    if(isLoggedIn && (location.pathname !== '/home')) history('/home')
   }
 
   const handleProductClick = () => {
-    if(location.pathname !== '/products') history('/products') 
+    if(isLoggedIn && (location.pathname !== '/products')) history('/products') 
   }
 
   const handleCartOpen = () => {
@@ -63,9 +63,7 @@ function Header() {
               className="sabka-bazar-logo"
               id="sabka-bazar-logo-id"
             />
-            <div
-              style={ { position: 'relative' } }
-            >
+            <div className='box-container'>
               <Box
                 sx={ {
                   marginLeft: '4rem',

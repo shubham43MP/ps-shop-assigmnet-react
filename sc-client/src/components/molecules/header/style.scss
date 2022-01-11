@@ -4,6 +4,10 @@
   padding: 10px !important;
 }
 
+.box-container {
+  position: relative;
+}
+
 .sabka-bazar-logo {
   max-width: 100%;
   object-fit: scale-down;
@@ -47,7 +51,7 @@
   .sabka-bazar-logo {
     $width: 8rem;
     width: $width;
-    height: ($width / 2.24 + .8rem);
+    height: calc($width / 2.24 + .8rem);
   }
 
   .home-product-mobile-icons {

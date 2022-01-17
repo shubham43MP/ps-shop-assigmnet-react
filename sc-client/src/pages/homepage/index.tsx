@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectBanner, selectLoading } from 'redux/selectors/banner.category'
 import { selectCategory } from 'redux/selectors/category.selector'
-import { getBanner, getCategory } from 'redux/actions/action'
-import { setProduct } from 'redux/actions/action'
+import { getCategory } from 'redux/actions/category.action'
+import { getBanner } from 'redux/actions/banner.action'
+import { setProduct } from 'redux/actions/product.action'
 import './style.scss'
 
 const OfferCategory = lazy(() => import('components/molecules/offer-category'))

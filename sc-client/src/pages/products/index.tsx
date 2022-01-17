@@ -2,7 +2,8 @@ import React, { lazy } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { SelectChangeEvent } from '@mui/material/Select';
 import { selectProducts, selectProdLoading } from 'redux/selectors/product.selector'
-import { getProducts, setProduct, addToCart } from 'redux/actions/action'
+import { addToCart } from 'redux/actions/global.action'
+import { getProducts, setProduct } from 'redux/actions/product.action'
 import {
   selectGlobalProductSelected,
   selectEnableBackdropAddCart,

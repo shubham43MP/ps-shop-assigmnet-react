@@ -11,7 +11,7 @@ import Button from 'components/atoms/buttons';
 import { selectGlobalCart, selectIsLogin } from 'redux/selectors/global.selector'
 import BackdropComponent from 'components/molecules/backdrop';
 import Cart from 'components/molecules/cart';
-import { userLogout } from 'redux/actions/action';
+import { userLogout } from 'redux/actions/global.action';
 import { appBarStyle, iconScaling } from './style';
 import './style.scss'
 import HomeProduct from '../home-product';

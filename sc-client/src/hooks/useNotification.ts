@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import {
   selectNotificationState
 } from 'redux/selectors/global.selector'
-import { setNotification } from 'redux/actions/action'
+import { setNotification } from 'redux/actions/global.action'
 import { Severity } from 'types/common.types'
 
 const useNotification = () => {

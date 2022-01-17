@@ -5,7 +5,7 @@ import { login } from 'config/fire'
 import useNotification from 'hooks/useNotification'
 import { classes } from './style'
 import { LoginState } from './login.type'
-import { addUser } from 'redux/actions/action'
+import { addUser } from 'redux/actions/global.action'
 import './styles.scss'
 import './queries.scss'
 

@@ -5,7 +5,7 @@ import { ProductType } from 'types/products'
 import CartItem from 'components/atoms/cart-item'
 import { LOWEST_PRICE_PROMOTION } from 'apis/constants'
 import { CartCount } from 'redux/types/rootStateType'
-import { removeCartItem, updateCartItemCount } from 'redux/actions/action'
+import { removeCartItem, updateCartItemCount } from 'redux/actions/global.action'
 import './style.scss'
 
 type TCartProps = {

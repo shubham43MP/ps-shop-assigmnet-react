@@ -1,10 +1,16 @@
 import { all, fork } from 'redux-saga/effects'
 import {
-  getProductsWatcher,
-  getCategoryWatcher,
-  getBannerWatcher,
+  getProductsWatcher
+} from 'redux/sagas/watchers/product.watcher'
+import {
+  getCategoryWatcher
+} from 'redux/sagas/watchers/category.watcher'
+import {
+  getBannerWatcher
+} from 'redux/sagas/watchers/banner.watcher'
+import {
   addToCartWatcher
-} from 'redux/sagas/watchers/watcher'
+} from 'redux/sagas/watchers/global.watcher'
 
 function* rootSaga() {
   yield all([

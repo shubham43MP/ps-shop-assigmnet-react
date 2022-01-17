@@ -5,12 +5,22 @@ import {
   GET_BANNER,
   GLOBAL_ADD_TO_CART
 } from 'redux/types/action.verbs'
+
 import {
   getProductsWorker,
-  getCategoryWorker,
-  getBannerWorker,
+} from 'redux/sagas/workers/product.worker'
+
+import {
+  getCategoryWorker
+} from 'redux/sagas/workers/category.worker'
+
+import {
+  getBannerWorker
+} from 'redux/sagas/workers/banner.worker'
+
+import {
   addToCartWorker
-} from 'redux/sagas/workers/workers'
+} from 'redux/sagas/workers/global.worker'
 
 export function* getProductsWatcher() {
   yield takeEvery(GET_PRODUCTS, getProductsWorker)

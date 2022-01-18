@@ -1,0 +1,16 @@
+.children {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (max-width: 68.75em) {
+  .children {
+    width: 100%;
+  }
+}
+
+@media (max-width: 26.5625em) {
+  .children {
+    width: 98%;
+  }
+}

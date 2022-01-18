@@ -1,0 +1,77 @@
+@import '../../styles/constants.module.scss';
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 3.5rem;
+}
+
+.signup-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+}
+
+.signup-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.signup-message {
+  font-size: 1.2rem;
+}
+
+.form-control-container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.btn-login {
+  background-color: $primary-pink;
+  border-radius: 15px;
+  height: 2.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  border: 1px solid $primary-pink;
+  width: fit-content;
+  width: 100%;
+}
+
+.btn-login:hover {
+  background-color: $shade1;
+}
+
+@media (max-width: 26.5625em) {
+
+  .signup-text {
+    font-size: 2rem;
+  }
+
+  .signup-text-container {
+    align-items: center;
+  }
+  .signup-message {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 46.875rem) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.5rem;
+  }
+  .signup-text-container {
+    align-items: center;
+  }
+
+  .form-control-container{
+    margin-top: 2rem;
+  }
+}

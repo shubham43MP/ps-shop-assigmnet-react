@@ -1,0 +1,65 @@
+@import '../../../styles/constants.module.scss';
+
+.header-container {
+  padding: 10px !important;
+}
+
+.box-container {
+  position: relative;
+}
+
+.sabka-bazar-logo {
+  max-width: 100%;
+  object-fit: scale-down;
+  object-position: bottom;
+}
+
+.badge-logo-container {
+  position: absolute;
+  bottom: 30%;
+}
+
+.signin-signout-register {
+  display: flex;
+  gap: .8rem
+}
+
+.signin-links:link, .signin-links:visited  {
+  text-decoration: none;
+  color: $shade1;
+  display: inline;
+  height: fit-content;
+}
+
+.signin-links:hover, .signin-links:active {
+  text-decoration: underline;
+}
+
+@media(min-width: 56.25em) {
+  .home-product-mobile-icons {
+    display: none;
+  }
+}
+
+@media(max-width: 56.25em) {
+  .signin-links:link, .signin-links:visited  {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 26.5625em) {
+  .sabka-bazar-logo {
+    $width: 8rem;
+    width: $width;
+    height: calc($width / 2.24 + .8rem);
+  }
+
+  .home-product-mobile-icons {
+    margin-left: 1rem;
+  }
+
+  .badge-logo-container {
+    margin-top: 1rem;
+  }
+}
+

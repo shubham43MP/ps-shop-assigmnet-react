@@ -1,0 +1,27 @@
+@import '../../../styles/constants.module.scss';
+
+.home-product-container{
+  margin-left: 2rem;
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  bottom: 1.4rem
+}
+
+.icon {
+  color: $shade1;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 26.5625em) {
+  .icon {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+
+  .home-product-container{
+    margin-left: 0rem;
+  }
+}

@@ -1,0 +1,29 @@
+@import '../../styles/constants.module.scss';
+
+.login-container {
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 2%;
+}
+
+.em-pass-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    align-items: center !important;
+}
+
+.btn-login {
+    margin-top: 2rem;
+    background-color: $primary-pink;
+    border-radius: 15px;
+    height: 2.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.5s;
+    border: 1px solid $primary-pink;
+}
+
+.btn-login:hover {
+    background-color: $shade1;
+}

@@ -1,15 +1,13 @@
-@import '../../../styles/variables.scss';
+@import '../../../styles/constants.module.scss';
 
 .offer-cat-base {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding-left: 3%;
-    padding-right: 3%;
+    margin-top: 1.5625rem;
+    margin-bottom: 1.5625rem;
 }
 
 .productImage {
     max-width: 100%;
-    width: 500px;
+    width: 31.25rem;
     object-fit: cover;
     object-position: bottom;
 }
@@ -24,44 +22,56 @@
 
 .title {
     font-weight: 900 !important;
-    font-size: 25px !important;
+    font-size: 1.5625rem !important;
 }
 
 .subtitle {
-    font-size: 15px !important;    
+    font-size: 0.9375rem !important;    
 }
 
 .offer-cat-button {
-    background-color: #FF058D !important;
+    background-color: $primary-pink !important;
     color: white !important;
     margin: auto !important;
     display: block !important;
     margin-top: 5px !important;
-    font-size: 12 !important;
+    font-size: .75rem !important;
+}
+
+.ts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title-subtitle-button-container {
-    display: table-cell !important;
-    vertical-align: middle !important;
+    padding: 0.8rem;
 }
 
-// @media screen and (min-width:0) and (max-width: $sm) {
-//     #offercatimage{
-//         width: 100px;
-//         padding-right: 50px; 
-//     }
-// }
+.image-container {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-// @media screen and (min-width: $sm) and (max-width: $md) {
-//     #offercatimage{
-//         width: 150px;
-//         padding-right: 30px;
-//     }
-// }
+.img-right {
+    align-items: flex-end;
+}
 
-// @media screen and (min-width: $md) {
-//     #offercatimage{
-//         width: 500px;
-//         padding-right: 250px;
-//     }
-// }
+.img-left {
+    align-items: flex-start;
+}
+
+@media (max-width: 26.5625em) {
+    .title {
+        font-size: 1.1rem !important;
+    }
+    
+    .subtitle {
+        font-size: 0.7rem !important;    
+    }
+
+    .offer-cat-button {
+        font-size: .5rem !important;
+    }
+}

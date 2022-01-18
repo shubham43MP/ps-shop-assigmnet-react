@@ -1,3 +1,5 @@
+@import '../../../styles/constants.module.scss';
+
 .banner-image-container {
     margin: auto;
     padding: 3%;
@@ -8,7 +10,6 @@
     object-fit: cover;
     object-position: bottom;
 }
-// From resource
 
 .slideshow {
   margin: 0 auto;
@@ -41,5 +42,5 @@
 }
 
 .slideshowDot.active {
-  background-color: #FF058D;
+  background-color: $primary-pink;
 }

@@ -1,0 +1,25 @@
+$xs: 325px;
+$sm: 426px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1440px;
+
+$primary-pink: #d10056;
+$secondary-blue: #51d9e2;
+$shade1: #a70045;
+$shade2: #d61a67;
+$shade3: #150009;
+
+:export {
+    primaryColor: $primary-pink;
+    secondaryColor: $secondary-blue;
+    xs: $xs;
+    sm: $sm;
+    md: $md;
+    lg: $lg;
+    xl: $xl;
+    shade1: $shade1;
+    shade2: $shade2;
+    shade3: $shade3;
+
+}

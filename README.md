@@ -60,4 +60,7 @@ yarn run start:client && npm run start:client
 The client will get started at `localhost:3000` and you can now explore the Sabka Bazaar Shopping Solution
 
 ### Developement System Configurations:
-OS - 
+OS - MacOS
+NODEJS - v14.17.6
+NPM - v6.14.15
+YARN - v1.22.17
